@@ -1,0 +1,13 @@
+fragment ClientQuoteFragment on ComponentContentClientQuote {
+  __typename
+  id
+  name
+  position
+  companyName
+  avatar {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+  text
+}

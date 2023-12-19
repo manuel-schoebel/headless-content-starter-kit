@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_content_button_bars",
+  "info": {
+    "displayName": "ButtonBar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.button"
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": [
+        "center",
+        "left",
+        "right"
+      ],
+      "default": "center"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_responsive_images",
+  "info": {
+    "displayName": "responsiveImage",
+    "icon": "circle"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "screenSize": {
+      "type": "enumeration",
+      "enum": [
+        "small mobile",
+        "medium mobile",
+        "large mobile",
+        "tablet",
+        "desktop"
+      ],
+      "required": true,
+      "default": "desktop"
+    }
+  }
+}

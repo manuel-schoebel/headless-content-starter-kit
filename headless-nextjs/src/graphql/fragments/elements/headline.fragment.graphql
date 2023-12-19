@@ -1,0 +1,7 @@
+fragment HeadlineFragment on ComponentElementsHeadline {
+  __typename
+  id
+  text
+  variant
+  align
+}

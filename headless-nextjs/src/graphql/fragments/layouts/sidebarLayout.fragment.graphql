@@ -1,0 +1,33 @@
+fragment SidebarLayoutFragment on ComponentLayoutsSidebarLayout {
+  __typename
+  id
+  sidebar_layout {
+    data {
+      attributes {
+        stickySidebar
+        sidebarComponents {
+          ... on ComponentNavigationTableOfContents {
+            ...TableOfContentsFragment
+          }
+          ... on ComponentNavigationLinkList {
+            ...LinkListFragment
+          }
+        }
+        contentComponents {
+          ... on ComponentElementsRichText {
+            ...RichTextFragment
+          }
+          ... on ComponentContentCode {
+            ...CodeFragment
+          }
+          ... on ComponentContentSectionHeadline {
+            ...SectionHeadlineFragment
+          }
+          ... on ComponentContentVideo {
+            ...VideoFragment
+          }
+        }
+      }
+    }
+  }
+}

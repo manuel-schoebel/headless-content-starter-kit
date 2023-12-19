@@ -1,0 +1,1 @@
+open -na "Google Chrome" --args --new-window "http://localhost:3010" "http://localhost:1340/admin" "http://localhost:1340/graphql"

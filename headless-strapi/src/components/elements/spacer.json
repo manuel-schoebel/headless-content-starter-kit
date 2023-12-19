@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_spacers",
+  "info": {
+    "displayName": "Spacer",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "spaceTop": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    "spaceBottom": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ]
+    }
+  }
+}

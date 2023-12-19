@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_content_pricings",
+  "info": {
+    "displayName": "pricing",
+    "icon": "shoppingCart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "plans": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.pricing-plan"
+    }
+  }
+}

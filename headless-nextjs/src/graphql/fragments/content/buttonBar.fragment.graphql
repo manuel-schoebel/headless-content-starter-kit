@@ -1,0 +1,8 @@
+fragment ButtonBarFragment on ComponentContentButtonBar {
+  __typename
+  id
+  align
+  buttons {
+    ...ButtonFragment
+  }
+}

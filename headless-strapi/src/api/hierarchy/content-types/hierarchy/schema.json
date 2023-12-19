@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hierarchies",
+  "info": {
+    "singularName": "hierarchy",
+    "pluralName": "hierarchies",
+    "displayName": "Hierarchy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hierarchy.hierarchy"
+    }
+  }
+}

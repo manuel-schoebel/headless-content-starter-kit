@@ -1,0 +1,7 @@
+fragment DropdownFragment on ComponentNavigationDropdown {
+  __typename
+  id
+  links {
+    ...LinkFragment
+  }
+}

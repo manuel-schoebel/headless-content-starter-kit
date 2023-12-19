@@ -1,0 +1,6 @@
+fragment SpacerFragment on ComponentElementsSpacer {
+  __typename
+  id
+  spaceTop
+  spaceBottom
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_content_image_grids",
+  "info": {
+    "displayName": "ImageGrid"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "gap": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "small",
+        "medium",
+        "large"
+      ]
+    }
+  }
+}

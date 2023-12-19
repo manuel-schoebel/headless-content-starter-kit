@@ -1,0 +1,79 @@
+query getPage(
+  $locale: I18NLocaleCode!
+  $offset: Int
+  $limit: Int
+  $filters: PageFiltersInput
+  $publicationState: PublicationState = LIVE
+) {
+  pages(
+    filters: $filters
+    pagination: { start: $offset, limit: $limit }
+    locale: $locale
+    publicationState: $publicationState
+  ) {
+    data {
+      id
+      attributes {
+        title
+        path
+        publicationDate
+        publishedAt
+        metaDescription
+        metaRobots
+        structuredData
+        previewImage {
+          data {
+            ...StrapiImageFragment
+          }
+        }
+        metaTitle
+        metaKeywords
+        components {
+          ### Content
+          ... on ComponentContentButtonBar {
+            ...ButtonBarFragment
+          }
+          ... on ComponentContentClientQuote {
+            ...ClientQuoteFragment
+          }
+          ... on ComponentContentPricing {
+            ...PricingFragment
+          }
+          ... on ComponentContentHero {
+            ...HeroComponentFragment
+          }
+          ... on ComponentContentImageText {
+            ...ImageTextFragment
+          }
+          ... on ComponentContentPagePreviewList {
+            ...PagePreviewListFragment
+          }
+          ... on ComponentContentSectionHeadline {
+            ...SectionHeadlineFragment
+          }
+          ... on ComponentContentSocialProofBar {
+            ...SocialProofBarFragment
+          }
+          ... on ComponentContentVideo {
+            ...VideoFragment
+          }
+          ### Elements
+          ... on ComponentElementsRichText {
+            ...RichTextFragment
+          }
+          ... on ComponentElementsSpacer {
+            ...SpacerFragment
+          }
+          ### Layouts
+          ... on ComponentLayoutsSidebarLayout {
+            ...SidebarLayoutFragment
+          }
+          ### Navigation
+          ... on ComponentNavigationLinkList {
+            ...LinkListFragment
+          }
+        }
+      }
+    }
+  }
+}

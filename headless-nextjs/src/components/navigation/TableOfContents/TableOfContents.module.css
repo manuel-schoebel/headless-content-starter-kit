@@ -1,0 +1,19 @@
+.nestedOlOuter {
+  @apply list-inside leading-8;
+  counter-reset: item
+}
+.nestedOl {
+  @apply list-inside;
+  counter-reset: item
+}
+.li:before {
+  @apply mr-1;
+  content: counters(item, ".") " ";
+  counter-increment: item
+}
+.outerLi {
+  @apply font-normal;
+}
+.nestedLi {
+  @apply ml-4 font-normal;
+}

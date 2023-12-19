@@ -1,0 +1,16 @@
+fragment LinkFragment on ComponentNavigationLink {
+  __typename
+  id
+  label
+  description
+  image {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+  url
+  target
+  page {
+    ...PagePathFragment
+  }
+}

@@ -1,0 +1,10 @@
+fragment LinkListFragment on ComponentNavigationLinkList {
+  __typename
+  id
+  linkListHeadline: headline
+  links {
+    ...LinkFragment
+  }
+  orientation
+  linkListAlign: align
+}

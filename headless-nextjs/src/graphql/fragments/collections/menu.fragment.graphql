@@ -1,0 +1,28 @@
+fragment MenuFragment on MenuEntity {
+  __typename
+  id
+  attributes {
+    name
+    menu_items {
+      data {
+        id
+        attributes {
+          label
+          target
+          url
+          page {
+            ...PagePathFragment
+          }
+          components {
+            ... on ComponentNavigationLinkList {
+              ...LinkListFragment
+            }
+            ... on ComponentContentPagePreviewList {
+              ...PagePreviewListFragment
+            }
+          }
+        }
+      }
+    }
+  }
+}

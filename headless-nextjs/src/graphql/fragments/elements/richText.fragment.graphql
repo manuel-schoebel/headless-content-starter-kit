@@ -1,0 +1,6 @@
+fragment RichTextFragment on ComponentElementsRichText {
+  __typename
+  id
+  html
+  richTextAlign: align
+}

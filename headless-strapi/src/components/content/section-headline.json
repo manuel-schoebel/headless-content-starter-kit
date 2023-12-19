@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_content_section_headlines",
+  "info": {
+    "displayName": "SectionHeadline",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.headline"
+    },
+    "useInTableOfContents": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+fragment PagePreviewListFragment on ComponentContentPagePreviewList {
+  __typename
+  id
+  limit
+  hierarchy {
+    data {
+      id
+      childIds
+    }
+  }
+  pages {
+    data {
+      id
+      attributes {
+        ...PagePreviewFragment
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layouts_sidebar_layouts",
+  "info": {
+    "displayName": "SidebarLayout"
+  },
+  "options": {},
+  "attributes": {
+    "sidebar_layout": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sidebar-layout.sidebar-layout"
+    }
+  }
+}

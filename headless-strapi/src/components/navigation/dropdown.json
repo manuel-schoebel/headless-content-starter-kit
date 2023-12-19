@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_navigation_dropdowns",
+  "info": {
+    "displayName": "Dropdown"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.link"
+    }
+  }
+}

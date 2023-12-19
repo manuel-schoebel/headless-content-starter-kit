@@ -1,0 +1,19 @@
+fragment GlobalFragment on GlobalEntity {
+  attributes {
+    twitterHandle
+    Logo {
+      data {
+        ...StrapiImageFragment
+      }
+    }
+    footer {
+      ### Navigation
+      ... on ComponentNavigationLinkList {
+        ...LinkListFragment
+      }
+      ... on ComponentElementsRichText {
+        ...RichTextFragment
+      }
+    }
+  }
+}

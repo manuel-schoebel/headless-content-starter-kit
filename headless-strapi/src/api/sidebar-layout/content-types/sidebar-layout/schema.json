@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sidebar_layouts",
+  "info": {
+    "singularName": "sidebar-layout",
+    "pluralName": "sidebar-layouts",
+    "displayName": "SidebarLayout",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "stickySidebar": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "sidebarComponents": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "navigation.link-list",
+        "navigation.table-of-contents"
+      ]
+    },
+    "contentComponents": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "content.section-headline",
+        "elements.rich-text",
+        "content.video",
+        "content.code"
+      ]
+    }
+  }
+}

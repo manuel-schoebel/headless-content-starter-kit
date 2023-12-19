@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_navigation_link_lists",
+  "info": {
+    "displayName": "LinkList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.link"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "orientation": {
+      "type": "enumeration",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "horizontal"
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ],
+      "default": "left"
+    }
+  }
+}

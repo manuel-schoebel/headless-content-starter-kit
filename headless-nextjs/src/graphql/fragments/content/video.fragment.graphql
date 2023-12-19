@@ -1,0 +1,10 @@
+fragment VideoFragment on ComponentContentVideo {
+  __typename
+  id
+  youtubeId
+  consentBackgroundImage {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+}

@@ -1,0 +1,10 @@
+fragment HeroComponentFragment on ComponentContentHero {
+  __typename
+  id
+  title
+  subTitle
+  titleColor
+  responsiveImage {
+    ...ResponsiveImageFragment
+  }
+}

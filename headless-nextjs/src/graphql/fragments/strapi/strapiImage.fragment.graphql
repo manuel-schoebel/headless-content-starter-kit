@@ -1,0 +1,11 @@
+fragment StrapiImageFragment on UploadFileEntity {
+  id
+  attributes {
+    alternativeText
+    caption
+    width
+    height
+    url
+    previewUrl
+  }
+}

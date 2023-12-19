@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_navigation_table_of_contents",
+  "info": {
+    "displayName": "TableOfContents",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

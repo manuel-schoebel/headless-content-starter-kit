@@ -1,0 +1,8 @@
+fragment SectionHeadlineFragment on ComponentContentSectionHeadline {
+  __typename
+  id
+  headline {
+    ...HeadlineFragment
+  }
+  useInTableOfContents
+}

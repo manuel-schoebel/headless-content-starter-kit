@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_elements_rich_texts",
+  "info": {
+    "displayName": "richText",
+    "icon": "circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    }
+  }
+}

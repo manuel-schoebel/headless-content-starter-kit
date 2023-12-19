@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_social_proof_bars",
+  "info": {
+    "displayName": "SocialProofBar"
+  },
+  "options": {},
+  "attributes": {
+    "avatars": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+fragment PagePathFragment on PageEntityResponse {
+  __typename
+  data {
+    id
+    attributes {
+      path
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_content_codes",
+  "info": {
+    "displayName": "Code"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "richtext"
+    }
+  }
+}

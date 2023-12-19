@@ -1,0 +1,5 @@
+{
+  "watch": ["src/graphql/**/*.graphql"],
+  "ext": "graphql",
+  "exec": "npm run codegen"
+}

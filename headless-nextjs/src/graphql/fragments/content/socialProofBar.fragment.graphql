@@ -1,0 +1,10 @@
+fragment SocialProofBarFragment on ComponentContentSocialProofBar {
+  id
+  __typename
+  html
+  avatars {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+}

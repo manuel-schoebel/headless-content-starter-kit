@@ -1,0 +1,17 @@
+fragment PagePreviewFragment on Page {
+  path
+  publicationDate
+  publishedAt
+  synopsis
+  title
+  previewImage {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+  hierarchy {
+    data {
+      id
+    }
+  }
+}

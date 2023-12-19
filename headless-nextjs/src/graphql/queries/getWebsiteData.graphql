@@ -1,0 +1,16 @@
+query getWebsiteData($locale: I18NLocaleCode!) {
+  menus(
+    filters: { name: { eq: "main" } }
+    locale: $locale
+    pagination: { start: 0, limit: 1 }
+  ) {
+    data {
+      ...MenuFragment
+    }
+  }
+  global {
+    data {
+      ...GlobalFragment
+    }
+  }
+}

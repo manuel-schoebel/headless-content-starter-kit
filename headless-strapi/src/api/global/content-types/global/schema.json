@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "footer": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.rich-text",
+        "navigation.link-list"
+      ]
+    },
+    "twitterHandle": {
+      "type": "string"
+    }
+  }
+}

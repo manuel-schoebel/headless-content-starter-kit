@@ -1,0 +1,20 @@
+fragment ImageTextFragment on ComponentContentImageText {
+  __typename
+  id
+  textAlign
+  html
+  imagePriority
+  mediaPosition
+  fixedHeight
+  screenHeight
+  imageColumns
+  textColumns
+  headline {
+    ...HeadlineFragment
+  }
+  image {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+}

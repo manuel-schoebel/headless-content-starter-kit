@@ -1,0 +1,10 @@
+fragment ResponsiveImageFragment on ComponentElementsResponsiveImage {
+  __typename
+  id
+  screenSize
+  image {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+}

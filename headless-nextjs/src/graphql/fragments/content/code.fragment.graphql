@@ -1,0 +1,5 @@
+fragment CodeFragment on ComponentContentCode {
+  __typename
+  id
+  html
+}

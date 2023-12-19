@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_client_quotes",
+  "info": {
+    "displayName": "ClientQuote",
+    "icon": "discuss",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

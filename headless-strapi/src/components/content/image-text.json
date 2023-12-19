@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_content_image_texts",
+  "info": {
+    "displayName": "imageText",
+    "icon": "circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "textAlign": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "required": true,
+      "default": "left"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imagePriority": {
+      "type": "boolean",
+      "required": false
+    },
+    "mediaPosition": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "required": true,
+      "default": "left"
+    },
+    "fixedHeight": {
+      "type": "integer",
+      "required": false
+    },
+    "screenHeight": {
+      "type": "boolean",
+      "required": false
+    },
+    "imageColumns": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "textColumns": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.headline"
+    }
+  }
+}

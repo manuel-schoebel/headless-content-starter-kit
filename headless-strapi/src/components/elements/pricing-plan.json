@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_pricing_plans",
+  "info": {
+    "displayName": "pricingPlan",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "features": {
+      "type": "text"
+    },
+    "href": {
+      "type": "string"
+    },
+    "btnLabel": {
+      "type": "string"
+    },
+    "highlightedText": {
+      "type": "string"
+    }
+  }
+}

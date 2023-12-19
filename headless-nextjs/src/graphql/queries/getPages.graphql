@@ -1,0 +1,20 @@
+query getPages(
+  $hierarchyIds: [ID!]
+  $start: Int!
+  $limit: Int!
+  $locale: I18NLocaleCode!
+) {
+  pages(
+    filters: { hierarchy: { id: { in: $hierarchyIds } } }
+    pagination: { start: $start, limit: $limit }
+    locale: $locale
+    sort: ["publicationDate:desc", "publishedAt:desc"]
+  ) {
+    data {
+      id
+      attributes {
+        ...PagePreviewFragment
+      }
+    }
+  }
+}

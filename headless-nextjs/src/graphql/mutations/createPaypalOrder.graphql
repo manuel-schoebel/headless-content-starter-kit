@@ -1,0 +1,9 @@
+mutation createPaypalOrder(
+  $amount: String!
+  $currency: String!
+  $orderId: String!
+) {
+  createPaypalOrder(amount: $amount, currency: $currency, orderId: $orderId) {
+    id
+  }
+}

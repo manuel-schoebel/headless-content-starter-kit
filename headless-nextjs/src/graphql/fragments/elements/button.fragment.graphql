@@ -1,0 +1,11 @@
+fragment ButtonFragment on ComponentElementsButton {
+  id
+  label
+  target
+  externalUrl
+  style
+  variant
+  page {
+    ...PagePathFragment
+  }
+}

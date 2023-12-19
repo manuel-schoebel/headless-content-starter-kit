@@ -1,0 +1,5 @@
+fragment TableOfContentsFragment on ComponentNavigationTableOfContents {
+  id
+  __typename
+  name
+}

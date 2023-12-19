@@ -1,0 +1,13 @@
+fragment PricingFragment on ComponentContentPricing {
+  id
+  __typename
+  plans {
+    id
+    price
+    name
+    features
+    href
+    btnLabel
+    highlightedText
+  }
+}
