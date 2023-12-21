@@ -3,8 +3,6 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import React from "react";
 import { LinkButton } from "../navigation/LinkButton";
 import { Paragraph } from "../elements/Paragraph";
-import { Paypal } from "../commerce/Paypal";
-import { PaypalRSC } from "../commerce/PaypalRSC";
 
 function Pricing({ plans }: PricingFragment) {
   if (!plans || plans.length === 0) {
@@ -72,7 +70,6 @@ function Pricing({ plans }: PricingFragment) {
               >
                 {plan?.btnLabel}
               </LinkButton>
-              <PaypalRSC />
             </div>
           </div>
         ))}
