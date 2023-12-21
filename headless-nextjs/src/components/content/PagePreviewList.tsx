@@ -3,11 +3,12 @@ import {
   PagePreviewFragment,
   PagePreviewListFragment,
 } from "@/graphql/generated/graphql";
-import { getImageUrl, getPages } from "@/lib/strapi";
+import { getImageUrl } from "@/lib/strapi";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Headline } from "../elements/Headline";
+import { getPages } from "@/lib/api/getPages";
 
 export interface IPagePreviewList extends PagePreviewListFragment {
   locale: ILocales;

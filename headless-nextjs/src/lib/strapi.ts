@@ -9,54 +9,9 @@ import {
   Enum_Componentelementsbutton_Style,
   Enum_Componentelementsbutton_Target,
   Enum_Componentnavigationlink_Target,
-  GetPagesDocument,
-  GetWebsiteDataDocument,
   LinkFragment,
   LinkListFragment,
 } from "@/graphql/generated/graphql";
-import { getClient } from "@/lib/graphqlRequestClient";
-
-export async function getPages({
-  limit = 3,
-  locale,
-  start,
-  hierarchyIds,
-}: {
-  limit: number;
-  locale: string;
-  start: number;
-  hierarchyIds: string[];
-}) {
-  const client = getClient({});
-
-  const response = await client.request(GetPagesDocument, {
-    limit,
-    locale,
-    start,
-    hierarchyIds,
-  });
-
-  return response.pages?.data;
-}
-
-export const getWebsiteData = async (locale: string) => {
-  // todo: add mainMenu caching tag
-  const client = getClient({});
-
-  const response = await client.request(GetWebsiteDataDocument, {
-    locale,
-  });
-
-  if (!response?.menus?.data || response?.menus?.data.length === 0) {
-    return;
-  }
-
-  const mainNavigation = response?.menus?.data.find(
-    (m) => m.attributes?.name === "main"
-  );
-  const global = response?.global?.data;
-  return { mainNavigation, global };
-};
 
 export function getImageUrl(url: string): string {
   return `${config.strapi.url}${url}`;

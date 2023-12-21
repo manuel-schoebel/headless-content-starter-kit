@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getImageUrl, getWebsiteData } from "@/lib/strapi";
+import { getImageUrl } from "@/lib/strapi";
 import { Container } from "@/components/layout/Container";
 import { Menu } from "@/components/navigation/Menu/Menu";
 import { DarkModeToggleBtn } from "@/components/actions/DarkModeToggleBtn";
@@ -9,6 +9,7 @@ import { config } from "@/config";
 import { ComponentRenderer } from "@/components/ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
 import { draftMode } from "next/headers";
+import { getWebsiteData } from "@/lib/api/getWebsiteData";
 
 interface ILayout {
   children: React.ReactNode;

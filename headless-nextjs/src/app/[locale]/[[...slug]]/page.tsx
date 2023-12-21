@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 import { ComponentRenderer } from "@/components/ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
 import { ILocales } from "@/config/i18n";
-import { getWebsiteData } from "@/lib/strapi";
 import { getPagePathFromSlug } from "@/lib/utils";
 import { Enum_Page_Metarobots } from "@/graphql/generated/graphql";
 import { getPageByPath } from "@/lib/api/getPageByPath";
-import { draftMode } from "next/headers";
+import { getWebsiteData } from "@/lib/api/getWebsiteData";
 
 export async function generateMetadata({
   params,
