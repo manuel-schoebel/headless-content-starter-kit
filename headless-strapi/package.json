@@ -10,7 +10,8 @@
   "scripts": {
     "build": "strapi build",
     "copyTypes": "node copyTypes.js",
-    "develop": "npm run generate && PORT=1340 strapi develop",
+    "dev": "npm run develop",
+    "develop": "npm run generate && strapi develop",
     "generate": "strapi ts:generate-types --debug",
     "generateAndCopy": "npm run generate && npm run copyTypes",
     "start": "strapi start",
