@@ -14,6 +14,7 @@
     "develop": "npm run generate && strapi develop",
     "generate": "strapi ts:generate-types --debug",
     "generateAndCopy": "npm run generate && npm run copyTypes",
+    "init": "node scripts/init.js",
     "start": "strapi start",
     "strapi": "strapi"
   },
