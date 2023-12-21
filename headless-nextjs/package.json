@@ -8,7 +8,8 @@
     "start": "next start",
     "codegen": "node codegen.js",
     "start:codegen": "nodemon",
-    "lint": "next lint"
+    "lint": "next lint",
+    "init": "node scripts/init.js"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.1",
