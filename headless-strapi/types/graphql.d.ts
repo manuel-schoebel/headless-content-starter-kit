@@ -600,44 +600,6 @@ export interface NexusGenInputs {
     target?: NexusGenEnums['ENUM_MENUITEM_TARGET'] | null; // ENUM_MENUITEM_TARGET
     url?: string | null; // String
   }
-  OrderFiltersInput: { // input type
-    address?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    address1?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    and?: Array<NexusGenInputs['OrderFiltersInput'] | null> | null; // [OrderFiltersInput]
-    city?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    company?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    country?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    createdAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
-    email?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    firstName?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    githubUsername?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    id?: NexusGenInputs['IDFilterInput'] | null; // IDFilterInput
-    lastName?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    not?: NexusGenInputs['OrderFiltersInput'] | null; // OrderFiltersInput
-    or?: Array<NexusGenInputs['OrderFiltersInput'] | null> | null; // [OrderFiltersInput]
-    paid?: NexusGenInputs['BooleanFilterInput'] | null; // BooleanFilterInput
-    pspId?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    updatedAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
-    vatId?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    wasAddedToGithubRepo?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
-    zip?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-  }
-  OrderInput: { // input type
-    address?: string | null; // String
-    address1?: string | null; // String
-    city?: string | null; // String
-    company?: string | null; // String
-    country?: string | null; // String
-    email?: string | null; // String
-    firstName?: string | null; // String
-    githubUsername?: string | null; // String
-    lastName?: string | null; // String
-    paid?: boolean | null; // Boolean
-    pspId?: string | null; // String
-    vatId?: string | null; // String
-    wasAddedToGithubRepo?: NexusGenScalars['DateTime'] | null; // DateTime
-    zip?: string | null; // String
-  }
   PageFiltersInput: { // input type
     and?: Array<NexusGenInputs['PageFiltersInput'] | null> | null; // [PageFiltersInput]
     createdAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
@@ -1107,28 +1069,6 @@ export interface NexusGenObjects {
   MenuItemRelationResponseCollection: {};
   MenuRelationResponseCollection: {};
   Mutation: {};
-  Order: { // root type
-    address: string; // String!
-    address1?: string | null; // String
-    city: string; // String!
-    company?: string | null; // String
-    country: string; // String!
-    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
-    email: string; // String!
-    firstName: string; // String!
-    githubUsername?: string | null; // String
-    lastName: string; // String!
-    paid: boolean; // Boolean!
-    pspId?: string | null; // String
-    updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
-    vatId?: string | null; // String
-    wasAddedToGithubRepo?: NexusGenScalars['DateTime'] | null; // DateTime
-    zip: string; // String!
-  }
-  OrderEntity: {};
-  OrderEntityResponse: {};
-  OrderEntityResponseCollection: {};
-  OrderRelationResponseCollection: {};
   Page: { // root type
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     locale?: string | null; // String
@@ -1269,7 +1209,7 @@ export interface NexusGenInterfaces {
 }
 
 export interface NexusGenUnions {
-  GenericMorph: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsButton'] | NexusGenRootTypes['ComponentElementsHeadline'] | NexusGenRootTypes['ComponentElementsPricingPlan'] | NexusGenRootTypes['ComponentElementsResponsiveImage'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationDropdown'] | NexusGenRootTypes['ComponentNavigationLink'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['ComponentNavigationTableOfContents'] | NexusGenRootTypes['Global'] | NexusGenRootTypes['Hierarchy'] | NexusGenRootTypes['I18NLocale'] | NexusGenRootTypes['Menu'] | NexusGenRootTypes['MenuItem'] | NexusGenRootTypes['Order'] | NexusGenRootTypes['Page'] | NexusGenRootTypes['SidebarLayout'] | NexusGenRootTypes['UploadFile'] | NexusGenRootTypes['UploadFolder'] | NexusGenRootTypes['UsersPermissionsPermission'] | NexusGenRootTypes['UsersPermissionsRole'] | NexusGenRootTypes['UsersPermissionsUser'];
+  GenericMorph: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsButton'] | NexusGenRootTypes['ComponentElementsHeadline'] | NexusGenRootTypes['ComponentElementsPricingPlan'] | NexusGenRootTypes['ComponentElementsResponsiveImage'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationDropdown'] | NexusGenRootTypes['ComponentNavigationLink'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['ComponentNavigationTableOfContents'] | NexusGenRootTypes['Global'] | NexusGenRootTypes['Hierarchy'] | NexusGenRootTypes['I18NLocale'] | NexusGenRootTypes['Menu'] | NexusGenRootTypes['MenuItem'] | NexusGenRootTypes['Page'] | NexusGenRootTypes['SidebarLayout'] | NexusGenRootTypes['UploadFile'] | NexusGenRootTypes['UploadFolder'] | NexusGenRootTypes['UsersPermissionsPermission'] | NexusGenRootTypes['UsersPermissionsRole'] | NexusGenRootTypes['UsersPermissionsUser'];
   GlobalFooterDynamicZone: NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
   MenuItemComponentsDynamicZone: NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
   PageComponentsDynamicZone: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
@@ -1553,7 +1493,6 @@ export interface NexusGenFieldTypes {
     createMenuItem: NexusGenRootTypes['MenuItemEntityResponse'] | null; // MenuItemEntityResponse
     createMenuItemLocalization: NexusGenRootTypes['MenuItemEntityResponse'] | null; // MenuItemEntityResponse
     createMenuLocalization: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
-    createOrder: NexusGenRootTypes['OrderEntityResponse'] | null; // OrderEntityResponse
     createPage: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
     createPageLocalization: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
     createSidebarLayout: NexusGenRootTypes['SidebarLayoutEntityResponse'] | null; // SidebarLayoutEntityResponse
@@ -1566,7 +1505,6 @@ export interface NexusGenFieldTypes {
     deleteHierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
     deleteMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     deleteMenuItem: NexusGenRootTypes['MenuItemEntityResponse'] | null; // MenuItemEntityResponse
-    deleteOrder: NexusGenRootTypes['OrderEntityResponse'] | null; // OrderEntityResponse
     deletePage: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
     deleteSidebarLayout: NexusGenRootTypes['SidebarLayoutEntityResponse'] | null; // SidebarLayoutEntityResponse
     deleteUploadFile: NexusGenRootTypes['UploadFileEntityResponse'] | null; // UploadFileEntityResponse
@@ -1586,7 +1524,6 @@ export interface NexusGenFieldTypes {
     updateHierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
     updateMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     updateMenuItem: NexusGenRootTypes['MenuItemEntityResponse'] | null; // MenuItemEntityResponse
-    updateOrder: NexusGenRootTypes['OrderEntityResponse'] | null; // OrderEntityResponse
     updatePage: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
     updateSidebarLayout: NexusGenRootTypes['SidebarLayoutEntityResponse'] | null; // SidebarLayoutEntityResponse
     updateUploadFile: NexusGenRootTypes['UploadFileEntityResponse'] | null; // UploadFileEntityResponse
@@ -1594,38 +1531,6 @@ export interface NexusGenFieldTypes {
     updateUsersPermissionsRole: NexusGenRootTypes['UsersPermissionsUpdateRolePayload'] | null; // UsersPermissionsUpdateRolePayload
     updateUsersPermissionsUser: NexusGenRootTypes['UsersPermissionsUserEntityResponse']; // UsersPermissionsUserEntityResponse!
     upload: NexusGenRootTypes['UploadFileEntityResponse']; // UploadFileEntityResponse!
-  }
-  Order: { // field return type
-    address: string; // String!
-    address1: string | null; // String
-    city: string; // String!
-    company: string | null; // String
-    country: string; // String!
-    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
-    email: string; // String!
-    firstName: string; // String!
-    githubUsername: string | null; // String
-    lastName: string; // String!
-    paid: boolean; // Boolean!
-    pspId: string | null; // String
-    updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
-    vatId: string | null; // String
-    wasAddedToGithubRepo: NexusGenScalars['DateTime'] | null; // DateTime
-    zip: string; // String!
-  }
-  OrderEntity: { // field return type
-    attributes: NexusGenRootTypes['Order'] | null; // Order
-    id: string | null; // ID
-  }
-  OrderEntityResponse: { // field return type
-    data: NexusGenRootTypes['OrderEntity'] | null; // OrderEntity
-  }
-  OrderEntityResponseCollection: { // field return type
-    data: NexusGenRootTypes['OrderEntity'][]; // [OrderEntity!]!
-    meta: NexusGenRootTypes['ResponseCollectionMeta']; // ResponseCollectionMeta!
-  }
-  OrderRelationResponseCollection: { // field return type
-    data: NexusGenRootTypes['OrderEntity'][]; // [OrderEntity!]!
   }
   Page: { // field return type
     components: Array<NexusGenRootTypes['PageComponentsDynamicZone'] | null> | null; // [PageComponentsDynamicZone]
@@ -1677,8 +1582,6 @@ export interface NexusGenFieldTypes {
     menuItem: NexusGenRootTypes['MenuItemEntityResponse'] | null; // MenuItemEntityResponse
     menuItems: NexusGenRootTypes['MenuItemEntityResponseCollection'] | null; // MenuItemEntityResponseCollection
     menus: NexusGenRootTypes['MenuEntityResponseCollection'] | null; // MenuEntityResponseCollection
-    order: NexusGenRootTypes['OrderEntityResponse'] | null; // OrderEntityResponse
-    orders: NexusGenRootTypes['OrderEntityResponseCollection'] | null; // OrderEntityResponseCollection
     page: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
     pages: NexusGenRootTypes['PageEntityResponseCollection'] | null; // PageEntityResponseCollection
     sidebarLayout: NexusGenRootTypes['SidebarLayoutEntityResponse'] | null; // SidebarLayoutEntityResponse
@@ -2147,7 +2050,6 @@ export interface NexusGenFieldTypeNames {
     createMenuItem: 'MenuItemEntityResponse'
     createMenuItemLocalization: 'MenuItemEntityResponse'
     createMenuLocalization: 'MenuEntityResponse'
-    createOrder: 'OrderEntityResponse'
     createPage: 'PageEntityResponse'
     createPageLocalization: 'PageEntityResponse'
     createSidebarLayout: 'SidebarLayoutEntityResponse'
@@ -2160,7 +2062,6 @@ export interface NexusGenFieldTypeNames {
     deleteHierarchy: 'HierarchyEntityResponse'
     deleteMenu: 'MenuEntityResponse'
     deleteMenuItem: 'MenuItemEntityResponse'
-    deleteOrder: 'OrderEntityResponse'
     deletePage: 'PageEntityResponse'
     deleteSidebarLayout: 'SidebarLayoutEntityResponse'
     deleteUploadFile: 'UploadFileEntityResponse'
@@ -2180,7 +2081,6 @@ export interface NexusGenFieldTypeNames {
     updateHierarchy: 'HierarchyEntityResponse'
     updateMenu: 'MenuEntityResponse'
     updateMenuItem: 'MenuItemEntityResponse'
-    updateOrder: 'OrderEntityResponse'
     updatePage: 'PageEntityResponse'
     updateSidebarLayout: 'SidebarLayoutEntityResponse'
     updateUploadFile: 'UploadFileEntityResponse'
@@ -2188,38 +2088,6 @@ export interface NexusGenFieldTypeNames {
     updateUsersPermissionsRole: 'UsersPermissionsUpdateRolePayload'
     updateUsersPermissionsUser: 'UsersPermissionsUserEntityResponse'
     upload: 'UploadFileEntityResponse'
-  }
-  Order: { // field return type name
-    address: 'String'
-    address1: 'String'
-    city: 'String'
-    company: 'String'
-    country: 'String'
-    createdAt: 'DateTime'
-    email: 'String'
-    firstName: 'String'
-    githubUsername: 'String'
-    lastName: 'String'
-    paid: 'Boolean'
-    pspId: 'String'
-    updatedAt: 'DateTime'
-    vatId: 'String'
-    wasAddedToGithubRepo: 'DateTime'
-    zip: 'String'
-  }
-  OrderEntity: { // field return type name
-    attributes: 'Order'
-    id: 'ID'
-  }
-  OrderEntityResponse: { // field return type name
-    data: 'OrderEntity'
-  }
-  OrderEntityResponseCollection: { // field return type name
-    data: 'OrderEntity'
-    meta: 'ResponseCollectionMeta'
-  }
-  OrderRelationResponseCollection: { // field return type name
-    data: 'OrderEntity'
   }
   Page: { // field return type name
     components: 'PageComponentsDynamicZone'
@@ -2271,8 +2139,6 @@ export interface NexusGenFieldTypeNames {
     menuItem: 'MenuItemEntityResponse'
     menuItems: 'MenuItemEntityResponseCollection'
     menus: 'MenuEntityResponseCollection'
-    order: 'OrderEntityResponse'
-    orders: 'OrderEntityResponseCollection'
     page: 'PageEntityResponse'
     pages: 'PageEntityResponseCollection'
     sidebarLayout: 'SidebarLayoutEntityResponse'
@@ -2573,9 +2439,6 @@ export interface NexusGenArgTypes {
       id?: string | null; // ID
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
     }
-    createOrder: { // args
-      data: NexusGenInputs['OrderInput']; // OrderInput!
-    }
     createPage: { // args
       data: NexusGenInputs['PageInput']; // PageInput!
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
@@ -2616,9 +2479,6 @@ export interface NexusGenArgTypes {
     deleteMenuItem: { // args
       id: string; // ID!
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
-    }
-    deleteOrder: { // args
-      id: string; // ID!
     }
     deletePage: { // args
       id: string; // ID!
@@ -2690,10 +2550,6 @@ export interface NexusGenArgTypes {
       data: NexusGenInputs['MenuItemInput']; // MenuItemInput!
       id: string; // ID!
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
-    }
-    updateOrder: { // args
-      data: NexusGenInputs['OrderInput']; // OrderInput!
-      id: string; // ID!
     }
     updatePage: { // args
       data: NexusGenInputs['PageInput']; // PageInput!
@@ -2772,14 +2628,6 @@ export interface NexusGenArgTypes {
     menus: { // args
       filters?: NexusGenInputs['MenuFiltersInput'] | null; // MenuFiltersInput
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
-      pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
-      sort: Array<string | null> | null; // [String]
-    }
-    order: { // args
-      id?: string | null; // ID
-    }
-    orders: { // args
-      filters?: NexusGenInputs['OrderFiltersInput'] | null; // OrderFiltersInput
       pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
       sort: Array<string | null> | null; // [String]
     }
@@ -2871,7 +2719,7 @@ export interface NexusGenArgTypes {
 }
 
 export interface NexusGenAbstractTypeMembers {
-  GenericMorph: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentCode" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsButton" | "ComponentElementsHeadline" | "ComponentElementsPricingPlan" | "ComponentElementsResponsiveImage" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationDropdown" | "ComponentNavigationLink" | "ComponentNavigationLinkList" | "ComponentNavigationTableOfContents" | "Global" | "Hierarchy" | "I18NLocale" | "Menu" | "MenuItem" | "Order" | "Page" | "SidebarLayout" | "UploadFile" | "UploadFolder" | "UsersPermissionsPermission" | "UsersPermissionsRole" | "UsersPermissionsUser"
+  GenericMorph: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentCode" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsButton" | "ComponentElementsHeadline" | "ComponentElementsPricingPlan" | "ComponentElementsResponsiveImage" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationDropdown" | "ComponentNavigationLink" | "ComponentNavigationLinkList" | "ComponentNavigationTableOfContents" | "Global" | "Hierarchy" | "I18NLocale" | "Menu" | "MenuItem" | "Page" | "SidebarLayout" | "UploadFile" | "UploadFolder" | "UsersPermissionsPermission" | "UsersPermissionsRole" | "UsersPermissionsUser"
   GlobalFooterDynamicZone: "ComponentElementsRichText" | "ComponentNavigationLinkList" | "Error"
   MenuItemComponentsDynamicZone: "ComponentContentPagePreviewList" | "ComponentNavigationLinkList" | "Error"
   PageComponentsDynamicZone: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationLinkList" | "Error"

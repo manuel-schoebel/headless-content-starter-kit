@@ -874,49 +874,6 @@ export interface ApiMenuItemMenuItem extends Schema.CollectionType {
   };
 }
 
-export interface ApiOrderOrder extends Schema.CollectionType {
-  collectionName: 'orders';
-  info: {
-    singularName: 'order';
-    pluralName: 'orders';
-    displayName: 'Order';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    firstName: Attribute.String & Attribute.Required;
-    lastName: Attribute.String & Attribute.Required;
-    email: Attribute.String & Attribute.Required;
-    githubUsername: Attribute.String;
-    address: Attribute.String & Attribute.Required;
-    address1: Attribute.String;
-    city: Attribute.String & Attribute.Required;
-    country: Attribute.String & Attribute.Required;
-    company: Attribute.String;
-    vatId: Attribute.String;
-    paid: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
-    zip: Attribute.String & Attribute.Required;
-    pspId: Attribute.String;
-    wasAddedToGithubRepo: Attribute.DateTime;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::order.order',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::order.order',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -1139,7 +1096,6 @@ declare module '@strapi/types' {
       'api::hierarchy.hierarchy': ApiHierarchyHierarchy;
       'api::menu.menu': ApiMenuMenu;
       'api::menu-item.menu-item': ApiMenuItemMenuItem;
-      'api::order.order': ApiOrderOrder;
       'api::page.page': ApiPagePage;
       'api::sidebar-layout.sidebar-layout': ApiSidebarLayoutSidebarLayout;
     }

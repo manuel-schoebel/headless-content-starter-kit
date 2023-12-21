@@ -754,7 +754,7 @@ input FloatFilterInput {
   startsWith: Float
 }
 
-union GenericMorph = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentCode | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsButton | ComponentElementsHeadline | ComponentElementsPricingPlan | ComponentElementsResponsiveImage | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationDropdown | ComponentNavigationLink | ComponentNavigationLinkList | ComponentNavigationTableOfContents | Global | Hierarchy | I18NLocale | Menu | MenuItem | Order | Page | SidebarLayout | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union GenericMorph = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentCode | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsButton | ComponentElementsHeadline | ComponentElementsPricingPlan | ComponentElementsResponsiveImage | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationDropdown | ComponentNavigationLink | ComponentNavigationLinkList | ComponentNavigationTableOfContents | Global | Hierarchy | I18NLocale | Menu | MenuItem | Page | SidebarLayout | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Global {
   Logo: UploadFileEntityResponse
@@ -1117,7 +1117,6 @@ type Mutation {
   createMenuItem(data: MenuItemInput!, locale: I18NLocaleCode): MenuItemEntityResponse
   createMenuItemLocalization(data: MenuItemInput, id: ID, locale: I18NLocaleCode): MenuItemEntityResponse
   createMenuLocalization(data: MenuInput, id: ID, locale: I18NLocaleCode): MenuEntityResponse
-  createOrder(data: OrderInput!): OrderEntityResponse
   createPage(data: PageInput!, locale: I18NLocaleCode): PageEntityResponse
   createPageLocalization(data: PageInput, id: ID, locale: I18NLocaleCode): PageEntityResponse
   createSidebarLayout(data: SidebarLayoutInput!, locale: I18NLocaleCode): SidebarLayoutEntityResponse
@@ -1134,7 +1133,6 @@ type Mutation {
   deleteHierarchy(id: ID!): HierarchyEntityResponse
   deleteMenu(id: ID!, locale: I18NLocaleCode): MenuEntityResponse
   deleteMenuItem(id: ID!, locale: I18NLocaleCode): MenuItemEntityResponse
-  deleteOrder(id: ID!): OrderEntityResponse
   deletePage(id: ID!, locale: I18NLocaleCode): PageEntityResponse
   deleteSidebarLayout(id: ID!, locale: I18NLocaleCode): SidebarLayoutEntityResponse
   deleteUploadFile(id: ID!): UploadFileEntityResponse
@@ -1168,7 +1166,6 @@ type Mutation {
   updateHierarchy(data: HierarchyInput!, id: ID!): HierarchyEntityResponse
   updateMenu(data: MenuInput!, id: ID!, locale: I18NLocaleCode): MenuEntityResponse
   updateMenuItem(data: MenuItemInput!, id: ID!, locale: I18NLocaleCode): MenuItemEntityResponse
-  updateOrder(data: OrderInput!, id: ID!): OrderEntityResponse
   updatePage(data: PageInput!, id: ID!, locale: I18NLocaleCode): PageEntityResponse
   updateSidebarLayout(data: SidebarLayoutInput!, id: ID!, locale: I18NLocaleCode): SidebarLayoutEntityResponse
   updateUploadFile(data: UploadFileInput!, id: ID!): UploadFileEntityResponse
@@ -1180,83 +1177,6 @@ type Mutation {
   """Update an existing user"""
   updateUsersPermissionsUser(data: UsersPermissionsUserInput!, id: ID!): UsersPermissionsUserEntityResponse!
   upload(field: String, file: Upload!, info: FileInfoInput, ref: String, refId: ID): UploadFileEntityResponse!
-}
-
-type Order {
-  address: String!
-  address1: String
-  city: String!
-  company: String
-  country: String!
-  createdAt: DateTime
-  email: String!
-  firstName: String!
-  githubUsername: String
-  lastName: String!
-  paid: Boolean!
-  pspId: String
-  updatedAt: DateTime
-  vatId: String
-  wasAddedToGithubRepo: DateTime
-  zip: String!
-}
-
-type OrderEntity {
-  attributes: Order
-  id: ID
-}
-
-type OrderEntityResponse {
-  data: OrderEntity
-}
-
-type OrderEntityResponseCollection {
-  data: [OrderEntity!]!
-  meta: ResponseCollectionMeta!
-}
-
-input OrderFiltersInput {
-  address: StringFilterInput
-  address1: StringFilterInput
-  and: [OrderFiltersInput]
-  city: StringFilterInput
-  company: StringFilterInput
-  country: StringFilterInput
-  createdAt: DateTimeFilterInput
-  email: StringFilterInput
-  firstName: StringFilterInput
-  githubUsername: StringFilterInput
-  id: IDFilterInput
-  lastName: StringFilterInput
-  not: OrderFiltersInput
-  or: [OrderFiltersInput]
-  paid: BooleanFilterInput
-  pspId: StringFilterInput
-  updatedAt: DateTimeFilterInput
-  vatId: StringFilterInput
-  wasAddedToGithubRepo: DateTimeFilterInput
-  zip: StringFilterInput
-}
-
-input OrderInput {
-  address: String
-  address1: String
-  city: String
-  company: String
-  country: String
-  email: String
-  firstName: String
-  githubUsername: String
-  lastName: String
-  paid: Boolean
-  pspId: String
-  vatId: String
-  wasAddedToGithubRepo: DateTime
-  zip: String
-}
-
-type OrderRelationResponseCollection {
-  data: [OrderEntity!]!
 }
 
 type Page {
@@ -1369,8 +1289,6 @@ type Query {
   menuItem(id: ID, locale: I18NLocaleCode): MenuItemEntityResponse
   menuItems(filters: MenuItemFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): MenuItemEntityResponseCollection
   menus(filters: MenuFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): MenuEntityResponseCollection
-  order(id: ID): OrderEntityResponse
-  orders(filters: OrderFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): OrderEntityResponseCollection
   page(id: ID, locale: I18NLocaleCode): PageEntityResponse
   pages(filters: PageFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, publicationState: PublicationState = LIVE, sort: [String] = []): PageEntityResponseCollection
   sidebarLayout(id: ID, locale: I18NLocaleCode): SidebarLayoutEntityResponse
