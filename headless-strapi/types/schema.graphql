@@ -1110,8 +1110,6 @@ type MenuRelationResponseCollection {
 }
 
 type Mutation {
-  capturePaypalOrder(orderId: String, paypalOrderId: String): PaypalCaptureOrderResponse
-
   """Change user password. Confirm with the current password."""
   changePassword(currentPassword: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
   createHierarchy(data: HierarchyInput!): HierarchyEntityResponse
@@ -1122,7 +1120,6 @@ type Mutation {
   createOrder(data: OrderInput!): OrderEntityResponse
   createPage(data: PageInput!, locale: I18NLocaleCode): PageEntityResponse
   createPageLocalization(data: PageInput, id: ID, locale: I18NLocaleCode): PageEntityResponse
-  createPaypalOrder(amount: String, currency: String, orderId: String): PaypalCreateOrderResponse
   createSidebarLayout(data: SidebarLayoutInput!, locale: I18NLocaleCode): SidebarLayoutEntityResponse
   createSidebarLayoutLocalization(data: SidebarLayoutInput, id: ID, locale: I18NLocaleCode): SidebarLayoutEntityResponse
   createUploadFile(data: UploadFileInput!): UploadFileEntityResponse
@@ -1354,22 +1351,6 @@ input PaginationArg {
   page: Int
   pageSize: Int
   start: Int
-}
-
-type PaypalCaptureOrderResponse {
-  success: Boolean
-}
-
-type PaypalCreateOrderResponse {
-  id: String
-  links: [PaypalLink]
-  status: String
-}
-
-type PaypalLink {
-  href: String
-  method: String
-  rel: String
 }
 
 enum PublicationState {

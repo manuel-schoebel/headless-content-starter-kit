@@ -1154,19 +1154,6 @@ export interface NexusGenObjects {
     pageSize: number; // Int!
     total: number; // Int!
   }
-  PaypalCaptureOrderResponse: { // root type
-    success?: boolean | null; // Boolean
-  }
-  PaypalCreateOrderResponse: { // root type
-    id?: string | null; // String
-    links?: Array<NexusGenRootTypes['PaypalLink'] | null> | null; // [PaypalLink]
-    status?: string | null; // String
-  }
-  PaypalLink: { // root type
-    href?: string | null; // String
-    method?: string | null; // String
-    rel?: string | null; // String
-  }
   Query: {};
   ResponseCollectionMeta: {};
   SidebarLayout: { // root type
@@ -1560,7 +1547,6 @@ export interface NexusGenFieldTypes {
     data: NexusGenRootTypes['MenuEntity'][]; // [MenuEntity!]!
   }
   Mutation: { // field return type
-    capturePaypalOrder: NexusGenRootTypes['PaypalCaptureOrderResponse'] | null; // PaypalCaptureOrderResponse
     changePassword: NexusGenRootTypes['UsersPermissionsLoginPayload'] | null; // UsersPermissionsLoginPayload
     createHierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
     createMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
@@ -1570,7 +1556,6 @@ export interface NexusGenFieldTypes {
     createOrder: NexusGenRootTypes['OrderEntityResponse'] | null; // OrderEntityResponse
     createPage: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
     createPageLocalization: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
-    createPaypalOrder: NexusGenRootTypes['PaypalCreateOrderResponse'] | null; // PaypalCreateOrderResponse
     createSidebarLayout: NexusGenRootTypes['SidebarLayoutEntityResponse'] | null; // SidebarLayoutEntityResponse
     createSidebarLayoutLocalization: NexusGenRootTypes['SidebarLayoutEntityResponse'] | null; // SidebarLayoutEntityResponse
     createUploadFile: NexusGenRootTypes['UploadFileEntityResponse'] | null; // UploadFileEntityResponse
@@ -1680,19 +1665,6 @@ export interface NexusGenFieldTypes {
     pageCount: number; // Int!
     pageSize: number; // Int!
     total: number; // Int!
-  }
-  PaypalCaptureOrderResponse: { // field return type
-    success: boolean | null; // Boolean
-  }
-  PaypalCreateOrderResponse: { // field return type
-    id: string | null; // String
-    links: Array<NexusGenRootTypes['PaypalLink'] | null> | null; // [PaypalLink]
-    status: string | null; // String
-  }
-  PaypalLink: { // field return type
-    href: string | null; // String
-    method: string | null; // String
-    rel: string | null; // String
   }
   Query: { // field return type
     global: NexusGenRootTypes['GlobalEntityResponse'] | null; // GlobalEntityResponse
@@ -2169,7 +2141,6 @@ export interface NexusGenFieldTypeNames {
     data: 'MenuEntity'
   }
   Mutation: { // field return type name
-    capturePaypalOrder: 'PaypalCaptureOrderResponse'
     changePassword: 'UsersPermissionsLoginPayload'
     createHierarchy: 'HierarchyEntityResponse'
     createMenu: 'MenuEntityResponse'
@@ -2179,7 +2150,6 @@ export interface NexusGenFieldTypeNames {
     createOrder: 'OrderEntityResponse'
     createPage: 'PageEntityResponse'
     createPageLocalization: 'PageEntityResponse'
-    createPaypalOrder: 'PaypalCreateOrderResponse'
     createSidebarLayout: 'SidebarLayoutEntityResponse'
     createSidebarLayoutLocalization: 'SidebarLayoutEntityResponse'
     createUploadFile: 'UploadFileEntityResponse'
@@ -2289,19 +2259,6 @@ export interface NexusGenFieldTypeNames {
     pageCount: 'Int'
     pageSize: 'Int'
     total: 'Int'
-  }
-  PaypalCaptureOrderResponse: { // field return type name
-    success: 'Boolean'
-  }
-  PaypalCreateOrderResponse: { // field return type name
-    id: 'String'
-    links: 'PaypalLink'
-    status: 'String'
-  }
-  PaypalLink: { // field return type name
-    href: 'String'
-    method: 'String'
-    rel: 'String'
   }
   Query: { // field return type name
     global: 'GlobalEntityResponse'
@@ -2590,10 +2547,6 @@ export interface NexusGenArgTypes {
     }
   }
   Mutation: {
-    capturePaypalOrder: { // args
-      orderId?: string | null; // String
-      paypalOrderId?: string | null; // String
-    }
     changePassword: { // args
       currentPassword: string; // String!
       password: string; // String!
@@ -2631,11 +2584,6 @@ export interface NexusGenArgTypes {
       data?: NexusGenInputs['PageInput'] | null; // PageInput
       id?: string | null; // ID
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
-    }
-    createPaypalOrder: { // args
-      amount?: string | null; // String
-      currency?: string | null; // String
-      orderId?: string | null; // String
     }
     createSidebarLayout: { // args
       data: NexusGenInputs['SidebarLayoutInput']; // SidebarLayoutInput!
