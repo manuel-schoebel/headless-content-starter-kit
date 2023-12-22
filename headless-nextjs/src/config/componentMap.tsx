@@ -28,7 +28,6 @@ import {
   ImageTextFragment,
   LinkFragment,
   LinkListFragment,
-  PagePreviewListFragment,
   PricingFragment,
   RichTextFragment,
   SectionHeadlineFragment,

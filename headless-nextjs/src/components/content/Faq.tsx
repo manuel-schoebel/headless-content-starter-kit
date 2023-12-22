@@ -25,7 +25,7 @@ function Faq({ faq }: FaqFragment) {
           <BlocksRenderer content={description} />
         </div>
       )}
-      <dl className="md:mt-4 space-y-4 divide-y divide-white/10 basis-1/2">
+      <dl className="md:mt-4 space-y-4 divide-y dark:divide-white/10 divide-gray-300 basis-1/2">
         {questions.map((question) => (
           <Disclosure as="div" key={question?.id} className="pt-4">
             {({ open }) => (
