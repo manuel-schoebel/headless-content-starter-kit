@@ -1,5 +1,0 @@
-mutation capturePaypalOrder($paypalOrderId: String!, $orderId: String!) {
-  capturePaypalOrder(paypalOrderId: $paypalOrderId, orderId: $orderId) {
-    success
-  }
-}

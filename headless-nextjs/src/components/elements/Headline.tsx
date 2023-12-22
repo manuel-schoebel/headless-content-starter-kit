@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 interface IHeadline {
-  variant: "h1" | "h2" | "h3" | "h4" | "h5";
+  variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   className?: string;
   children?: ReactNode;
 }
@@ -38,5 +38,7 @@ export function Headline({
       return <h4 className={`${className}`}>{children}</h4>;
     case "h5":
       return <h5 className={`${className}`}>{children}</h5>;
+    case "h6":
+      return <h6 className={`${className}`}>{children}</h6>;
   }
 }

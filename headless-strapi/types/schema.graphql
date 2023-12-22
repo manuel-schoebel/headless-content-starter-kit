@@ -99,6 +99,23 @@ input ComponentContentCodeInput {
   id: ID
 }
 
+type ComponentContentFaq {
+  faq: FaqEntityResponse
+  id: ID!
+}
+
+input ComponentContentFaqFiltersInput {
+  and: [ComponentContentFaqFiltersInput]
+  faq: FaqFiltersInput
+  not: ComponentContentFaqFiltersInput
+  or: [ComponentContentFaqFiltersInput]
+}
+
+input ComponentContentFaqInput {
+  faq: ID
+  id: ID
+}
+
 type ComponentContentHero {
   id: ID!
   responsiveImage(filters: ComponentElementsResponsiveImageFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentElementsResponsiveImage]
@@ -373,6 +390,26 @@ input ComponentElementsPricingPlanInput {
   id: ID
   name: String
   price: String
+}
+
+type ComponentElementsQuestionAndAnswer {
+  answer: JSON!
+  id: ID!
+  question: String!
+}
+
+input ComponentElementsQuestionAndAnswerFiltersInput {
+  and: [ComponentElementsQuestionAndAnswerFiltersInput]
+  answer: JSONFilterInput
+  not: ComponentElementsQuestionAndAnswerFiltersInput
+  or: [ComponentElementsQuestionAndAnswerFiltersInput]
+  question: StringFilterInput
+}
+
+input ComponentElementsQuestionAndAnswerInput {
+  answer: JSON
+  id: ID
+  question: String
 }
 
 type ComponentElementsResponsiveImage {
@@ -723,6 +760,50 @@ type Error {
   message: String
 }
 
+type Faq {
+  createdAt: DateTime
+  description: JSON
+  name: String
+  questions(filters: ComponentElementsQuestionAndAnswerFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentElementsQuestionAndAnswer]
+  updatedAt: DateTime
+}
+
+type FaqEntity {
+  attributes: Faq
+  id: ID
+}
+
+type FaqEntityResponse {
+  data: FaqEntity
+}
+
+type FaqEntityResponseCollection {
+  data: [FaqEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input FaqFiltersInput {
+  and: [FaqFiltersInput]
+  createdAt: DateTimeFilterInput
+  description: JSONFilterInput
+  id: IDFilterInput
+  name: StringFilterInput
+  not: FaqFiltersInput
+  or: [FaqFiltersInput]
+  questions: ComponentElementsQuestionAndAnswerFiltersInput
+  updatedAt: DateTimeFilterInput
+}
+
+input FaqInput {
+  description: JSON
+  name: String
+  questions: [ComponentElementsQuestionAndAnswerInput]
+}
+
+type FaqRelationResponseCollection {
+  data: [FaqEntity!]!
+}
+
 input FileInfoInput {
   alternativeText: String
   caption: String
@@ -754,7 +835,7 @@ input FloatFilterInput {
   startsWith: Float
 }
 
-union GenericMorph = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentCode | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsButton | ComponentElementsHeadline | ComponentElementsPricingPlan | ComponentElementsResponsiveImage | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationDropdown | ComponentNavigationLink | ComponentNavigationLinkList | ComponentNavigationTableOfContents | Global | Hierarchy | I18NLocale | Menu | MenuItem | Page | SidebarLayout | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union GenericMorph = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentCode | ComponentContentFaq | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsButton | ComponentElementsHeadline | ComponentElementsPricingPlan | ComponentElementsQuestionAndAnswer | ComponentElementsResponsiveImage | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationDropdown | ComponentNavigationLink | ComponentNavigationLinkList | ComponentNavigationTableOfContents | Faq | Global | Hierarchy | I18NLocale | Menu | MenuItem | Page | SidebarLayout | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Global {
   Logo: UploadFileEntityResponse
@@ -1112,6 +1193,7 @@ type MenuRelationResponseCollection {
 type Mutation {
   """Change user password. Confirm with the current password."""
   changePassword(currentPassword: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
+  createFaq(data: FaqInput!): FaqEntityResponse
   createHierarchy(data: HierarchyInput!): HierarchyEntityResponse
   createMenu(data: MenuInput!, locale: I18NLocaleCode): MenuEntityResponse
   createMenuItem(data: MenuItemInput!, locale: I18NLocaleCode): MenuItemEntityResponse
@@ -1129,6 +1211,7 @@ type Mutation {
 
   """Create a new user"""
   createUsersPermissionsUser(data: UsersPermissionsUserInput!): UsersPermissionsUserEntityResponse!
+  deleteFaq(id: ID!): FaqEntityResponse
   deleteGlobal: GlobalEntityResponse
   deleteHierarchy(id: ID!): HierarchyEntityResponse
   deleteMenu(id: ID!, locale: I18NLocaleCode): MenuEntityResponse
@@ -1161,6 +1244,7 @@ type Mutation {
   Reset user password. Confirm with a code (resetToken from forgotPassword)
   """
   resetPassword(code: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
+  updateFaq(data: FaqInput!, id: ID!): FaqEntityResponse
   updateFileInfo(id: ID!, info: FileInfoInput): UploadFileEntityResponse!
   updateGlobal(data: GlobalInput!): GlobalEntityResponse
   updateHierarchy(data: HierarchyInput!, id: ID!): HierarchyEntityResponse
@@ -1199,7 +1283,7 @@ type Page {
   updatedAt: DateTime
 }
 
-union PageComponentsDynamicZone = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationLinkList | Error
+union PageComponentsDynamicZone = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentFaq | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationLinkList | Error
 
 scalar PageComponentsDynamicZoneInput
 
@@ -1279,6 +1363,8 @@ enum PublicationState {
 }
 
 type Query {
+  faq(id: ID): FaqEntityResponse
+  faqs(filters: FaqFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): FaqEntityResponseCollection
   global: GlobalEntityResponse
   hierarchies(filters: HierarchyFiltersInput, pagination: PaginationArg = {}, publicationState: PublicationState = LIVE, sort: [String] = []): HierarchyEntityResponseCollection
   hierarchy(id: ID): HierarchyEntityResponse

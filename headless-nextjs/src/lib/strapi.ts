@@ -14,6 +14,10 @@ import {
 } from "@/graphql/generated/graphql";
 
 export function getImageUrl(url: string): string {
+  const modifiedUrl = url.replace("http://localhost", "http://127.0.0.1");
+  if (modifiedUrl.startsWith("http")) {
+    return modifiedUrl;
+  }
   return `${config.strapi.url}${url}`;
 }
 

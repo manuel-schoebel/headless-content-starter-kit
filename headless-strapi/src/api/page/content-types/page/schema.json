@@ -117,7 +117,8 @@
         "content.video",
         "content.client-quote",
         "elements.spacer",
-        "content.pricing"
+        "content.pricing",
+        "content.faq"
       ]
     },
     "hierarchy": {

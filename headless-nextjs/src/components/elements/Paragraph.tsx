@@ -13,11 +13,11 @@ export function Paragraph({
 }: IParagraph): JSX.Element {
   return (
     <p
-      className={`font-source ${className}
-      ${size === "small" && "text-sm"}
-      ${size === "regular" && "text-base"}
-      ${size === "large" && "text-lg"}
-      ${size === "very large" && "text-xl"}
+      className={`font-source dark:text-light ${className}
+      ${size === "small" ? "text-sm" : ""}
+      ${size === "regular" ? "text-base" : ""}
+      ${size === "large" ? "text-lg" : ""}
+      ${size === "very large" ? "text-xl" : ""}
   `.trim()}
     >
       {children}

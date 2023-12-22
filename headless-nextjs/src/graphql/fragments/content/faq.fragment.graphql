@@ -1,0 +1,17 @@
+fragment FaqFragment on ComponentContentFaq {
+  id
+  __typename
+  faq {
+    data {
+      id
+      attributes {
+        questions {
+          id
+          question
+          answer
+        }
+        description
+      }
+    }
+  }
+}

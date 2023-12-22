@@ -77,6 +77,16 @@ export interface NexusGenInputs {
     code?: string | null; // String
     id?: string | null; // ID
   }
+  ComponentContentFaqFiltersInput: { // input type
+    and?: Array<NexusGenInputs['ComponentContentFaqFiltersInput'] | null> | null; // [ComponentContentFaqFiltersInput]
+    faq?: NexusGenInputs['FaqFiltersInput'] | null; // FaqFiltersInput
+    not?: NexusGenInputs['ComponentContentFaqFiltersInput'] | null; // ComponentContentFaqFiltersInput
+    or?: Array<NexusGenInputs['ComponentContentFaqFiltersInput'] | null> | null; // [ComponentContentFaqFiltersInput]
+  }
+  ComponentContentFaqInput: { // input type
+    faq?: string | null; // ID
+    id?: string | null; // ID
+  }
   ComponentContentHeroFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentContentHeroFiltersInput'] | null> | null; // [ComponentContentHeroFiltersInput]
     not?: NexusGenInputs['ComponentContentHeroFiltersInput'] | null; // ComponentContentHeroFiltersInput
@@ -243,6 +253,18 @@ export interface NexusGenInputs {
     name?: string | null; // String
     price?: string | null; // String
   }
+  ComponentElementsQuestionAndAnswerFiltersInput: { // input type
+    and?: Array<NexusGenInputs['ComponentElementsQuestionAndAnswerFiltersInput'] | null> | null; // [ComponentElementsQuestionAndAnswerFiltersInput]
+    answer?: NexusGenInputs['JSONFilterInput'] | null; // JSONFilterInput
+    not?: NexusGenInputs['ComponentElementsQuestionAndAnswerFiltersInput'] | null; // ComponentElementsQuestionAndAnswerFiltersInput
+    or?: Array<NexusGenInputs['ComponentElementsQuestionAndAnswerFiltersInput'] | null> | null; // [ComponentElementsQuestionAndAnswerFiltersInput]
+    question?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+  }
+  ComponentElementsQuestionAndAnswerInput: { // input type
+    answer?: NexusGenScalars['JSON'] | null; // JSON
+    id?: string | null; // ID
+    question?: string | null; // String
+  }
   ComponentElementsResponsiveImageFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentElementsResponsiveImageFiltersInput'] | null> | null; // [ComponentElementsResponsiveImageFiltersInput]
     not?: NexusGenInputs['ComponentElementsResponsiveImageFiltersInput'] | null; // ComponentElementsResponsiveImageFiltersInput
@@ -390,6 +412,22 @@ export interface NexusGenInputs {
     null?: boolean | null; // Boolean
     or?: Array<NexusGenScalars['DateTime'] | null> | null; // [DateTime]
     startsWith?: NexusGenScalars['DateTime'] | null; // DateTime
+  }
+  FaqFiltersInput: { // input type
+    and?: Array<NexusGenInputs['FaqFiltersInput'] | null> | null; // [FaqFiltersInput]
+    createdAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
+    description?: NexusGenInputs['JSONFilterInput'] | null; // JSONFilterInput
+    id?: NexusGenInputs['IDFilterInput'] | null; // IDFilterInput
+    name?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    not?: NexusGenInputs['FaqFiltersInput'] | null; // FaqFiltersInput
+    or?: Array<NexusGenInputs['FaqFiltersInput'] | null> | null; // [FaqFiltersInput]
+    questions?: NexusGenInputs['ComponentElementsQuestionAndAnswerFiltersInput'] | null; // ComponentElementsQuestionAndAnswerFiltersInput
+    updatedAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
+  }
+  FaqInput: { // input type
+    description?: NexusGenScalars['JSON'] | null; // JSON
+    name?: string | null; // String
+    questions?: Array<NexusGenInputs['ComponentElementsQuestionAndAnswerInput'] | null> | null; // [ComponentElementsQuestionAndAnswerInput]
   }
   FileInfoInput: { // input type
     alternativeText?: string | null; // String
@@ -910,6 +948,9 @@ export interface NexusGenObjects {
     code?: string | null; // String
     id: string; // ID!
   }
+  ComponentContentFaq: { // root type
+    id: string; // ID!
+  }
   ComponentContentHero: { // root type
     id: string; // ID!
     subTitle?: string | null; // String
@@ -973,6 +1014,11 @@ export interface NexusGenObjects {
     name?: string | null; // String
     price?: string | null; // String
   }
+  ComponentElementsQuestionAndAnswer: { // root type
+    answer: NexusGenScalars['JSON']; // JSON!
+    id: string; // ID!
+    question: string; // String!
+  }
   ComponentElementsResponsiveImage: { // root type
     id: string; // ID!
     screenSize: NexusGenEnums['ENUM_COMPONENTELEMENTSRESPONSIVEIMAGE_SCREENSIZE']; // ENUM_COMPONENTELEMENTSRESPONSIVEIMAGE_SCREENSIZE!
@@ -1016,6 +1062,16 @@ export interface NexusGenObjects {
   Error: { // root type
     message?: string | null; // String
   }
+  Faq: { // root type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    description?: NexusGenScalars['JSON'] | null; // JSON
+    name?: string | null; // String
+    updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
+  }
+  FaqEntity: {};
+  FaqEntityResponse: {};
+  FaqEntityResponseCollection: {};
+  FaqRelationResponseCollection: {};
   Global: { // root type
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     twitterHandle?: string | null; // String
@@ -1209,10 +1265,10 @@ export interface NexusGenInterfaces {
 }
 
 export interface NexusGenUnions {
-  GenericMorph: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsButton'] | NexusGenRootTypes['ComponentElementsHeadline'] | NexusGenRootTypes['ComponentElementsPricingPlan'] | NexusGenRootTypes['ComponentElementsResponsiveImage'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationDropdown'] | NexusGenRootTypes['ComponentNavigationLink'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['ComponentNavigationTableOfContents'] | NexusGenRootTypes['Global'] | NexusGenRootTypes['Hierarchy'] | NexusGenRootTypes['I18NLocale'] | NexusGenRootTypes['Menu'] | NexusGenRootTypes['MenuItem'] | NexusGenRootTypes['Page'] | NexusGenRootTypes['SidebarLayout'] | NexusGenRootTypes['UploadFile'] | NexusGenRootTypes['UploadFolder'] | NexusGenRootTypes['UsersPermissionsPermission'] | NexusGenRootTypes['UsersPermissionsRole'] | NexusGenRootTypes['UsersPermissionsUser'];
+  GenericMorph: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentFaq'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsButton'] | NexusGenRootTypes['ComponentElementsHeadline'] | NexusGenRootTypes['ComponentElementsPricingPlan'] | NexusGenRootTypes['ComponentElementsQuestionAndAnswer'] | NexusGenRootTypes['ComponentElementsResponsiveImage'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationDropdown'] | NexusGenRootTypes['ComponentNavigationLink'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['ComponentNavigationTableOfContents'] | NexusGenRootTypes['Faq'] | NexusGenRootTypes['Global'] | NexusGenRootTypes['Hierarchy'] | NexusGenRootTypes['I18NLocale'] | NexusGenRootTypes['Menu'] | NexusGenRootTypes['MenuItem'] | NexusGenRootTypes['Page'] | NexusGenRootTypes['SidebarLayout'] | NexusGenRootTypes['UploadFile'] | NexusGenRootTypes['UploadFolder'] | NexusGenRootTypes['UsersPermissionsPermission'] | NexusGenRootTypes['UsersPermissionsRole'] | NexusGenRootTypes['UsersPermissionsUser'];
   GlobalFooterDynamicZone: NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
   MenuItemComponentsDynamicZone: NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
-  PageComponentsDynamicZone: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
+  PageComponentsDynamicZone: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentFaq'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
   SidebarLayoutContentComponentsDynamicZone: NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['Error'];
   SidebarLayoutSidebarComponentsDynamicZone: NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['ComponentNavigationTableOfContents'] | NexusGenRootTypes['Error'];
 }
@@ -1243,6 +1299,10 @@ export interface NexusGenFieldTypes {
   ComponentContentCode: { // field return type
     code: string | null; // String
     html: string | null; // String
+    id: string; // ID!
+  }
+  ComponentContentFaq: { // field return type
+    faq: NexusGenRootTypes['FaqEntityResponse'] | null; // FaqEntityResponse
     id: string; // ID!
   }
   ComponentContentHero: { // field return type
@@ -1322,6 +1382,11 @@ export interface NexusGenFieldTypes {
     name: string | null; // String
     price: string | null; // String
   }
+  ComponentElementsQuestionAndAnswer: { // field return type
+    answer: NexusGenScalars['JSON']; // JSON!
+    id: string; // ID!
+    question: string; // String!
+  }
   ComponentElementsResponsiveImage: { // field return type
     id: string; // ID!
     image: NexusGenRootTypes['UploadFileEntityResponse']; // UploadFileEntityResponse!
@@ -1372,6 +1437,27 @@ export interface NexusGenFieldTypes {
   Error: { // field return type
     code: string; // String!
     message: string | null; // String
+  }
+  Faq: { // field return type
+    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    description: NexusGenScalars['JSON'] | null; // JSON
+    name: string | null; // String
+    questions: Array<NexusGenRootTypes['ComponentElementsQuestionAndAnswer'] | null> | null; // [ComponentElementsQuestionAndAnswer]
+    updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
+  }
+  FaqEntity: { // field return type
+    attributes: NexusGenRootTypes['Faq'] | null; // Faq
+    id: string | null; // ID
+  }
+  FaqEntityResponse: { // field return type
+    data: NexusGenRootTypes['FaqEntity'] | null; // FaqEntity
+  }
+  FaqEntityResponseCollection: { // field return type
+    data: NexusGenRootTypes['FaqEntity'][]; // [FaqEntity!]!
+    meta: NexusGenRootTypes['ResponseCollectionMeta']; // ResponseCollectionMeta!
+  }
+  FaqRelationResponseCollection: { // field return type
+    data: NexusGenRootTypes['FaqEntity'][]; // [FaqEntity!]!
   }
   Global: { // field return type
     Logo: NexusGenRootTypes['UploadFileEntityResponse'] | null; // UploadFileEntityResponse
@@ -1488,6 +1574,7 @@ export interface NexusGenFieldTypes {
   }
   Mutation: { // field return type
     changePassword: NexusGenRootTypes['UsersPermissionsLoginPayload'] | null; // UsersPermissionsLoginPayload
+    createFaq: NexusGenRootTypes['FaqEntityResponse'] | null; // FaqEntityResponse
     createHierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
     createMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     createMenuItem: NexusGenRootTypes['MenuItemEntityResponse'] | null; // MenuItemEntityResponse
@@ -1501,6 +1588,7 @@ export interface NexusGenFieldTypes {
     createUploadFolder: NexusGenRootTypes['UploadFolderEntityResponse'] | null; // UploadFolderEntityResponse
     createUsersPermissionsRole: NexusGenRootTypes['UsersPermissionsCreateRolePayload'] | null; // UsersPermissionsCreateRolePayload
     createUsersPermissionsUser: NexusGenRootTypes['UsersPermissionsUserEntityResponse']; // UsersPermissionsUserEntityResponse!
+    deleteFaq: NexusGenRootTypes['FaqEntityResponse'] | null; // FaqEntityResponse
     deleteGlobal: NexusGenRootTypes['GlobalEntityResponse'] | null; // GlobalEntityResponse
     deleteHierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
     deleteMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
@@ -1519,6 +1607,7 @@ export interface NexusGenFieldTypes {
     register: NexusGenRootTypes['UsersPermissionsLoginPayload']; // UsersPermissionsLoginPayload!
     removeFile: NexusGenRootTypes['UploadFileEntityResponse'] | null; // UploadFileEntityResponse
     resetPassword: NexusGenRootTypes['UsersPermissionsLoginPayload'] | null; // UsersPermissionsLoginPayload
+    updateFaq: NexusGenRootTypes['FaqEntityResponse'] | null; // FaqEntityResponse
     updateFileInfo: NexusGenRootTypes['UploadFileEntityResponse']; // UploadFileEntityResponse!
     updateGlobal: NexusGenRootTypes['GlobalEntityResponse'] | null; // GlobalEntityResponse
     updateHierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
@@ -1572,6 +1661,8 @@ export interface NexusGenFieldTypes {
     total: number; // Int!
   }
   Query: { // field return type
+    faq: NexusGenRootTypes['FaqEntityResponse'] | null; // FaqEntityResponse
+    faqs: NexusGenRootTypes['FaqEntityResponseCollection'] | null; // FaqEntityResponseCollection
     global: NexusGenRootTypes['GlobalEntityResponse'] | null; // GlobalEntityResponse
     hierarchies: NexusGenRootTypes['HierarchyEntityResponseCollection'] | null; // HierarchyEntityResponseCollection
     hierarchy: NexusGenRootTypes['HierarchyEntityResponse'] | null; // HierarchyEntityResponse
@@ -1802,6 +1893,10 @@ export interface NexusGenFieldTypeNames {
     html: 'String'
     id: 'ID'
   }
+  ComponentContentFaq: { // field return type name
+    faq: 'FaqEntityResponse'
+    id: 'ID'
+  }
   ComponentContentHero: { // field return type name
     id: 'ID'
     responsiveImage: 'ComponentElementsResponsiveImage'
@@ -1879,6 +1974,11 @@ export interface NexusGenFieldTypeNames {
     name: 'String'
     price: 'String'
   }
+  ComponentElementsQuestionAndAnswer: { // field return type name
+    answer: 'JSON'
+    id: 'ID'
+    question: 'String'
+  }
   ComponentElementsResponsiveImage: { // field return type name
     id: 'ID'
     image: 'UploadFileEntityResponse'
@@ -1929,6 +2029,27 @@ export interface NexusGenFieldTypeNames {
   Error: { // field return type name
     code: 'String'
     message: 'String'
+  }
+  Faq: { // field return type name
+    createdAt: 'DateTime'
+    description: 'JSON'
+    name: 'String'
+    questions: 'ComponentElementsQuestionAndAnswer'
+    updatedAt: 'DateTime'
+  }
+  FaqEntity: { // field return type name
+    attributes: 'Faq'
+    id: 'ID'
+  }
+  FaqEntityResponse: { // field return type name
+    data: 'FaqEntity'
+  }
+  FaqEntityResponseCollection: { // field return type name
+    data: 'FaqEntity'
+    meta: 'ResponseCollectionMeta'
+  }
+  FaqRelationResponseCollection: { // field return type name
+    data: 'FaqEntity'
   }
   Global: { // field return type name
     Logo: 'UploadFileEntityResponse'
@@ -2045,6 +2166,7 @@ export interface NexusGenFieldTypeNames {
   }
   Mutation: { // field return type name
     changePassword: 'UsersPermissionsLoginPayload'
+    createFaq: 'FaqEntityResponse'
     createHierarchy: 'HierarchyEntityResponse'
     createMenu: 'MenuEntityResponse'
     createMenuItem: 'MenuItemEntityResponse'
@@ -2058,6 +2180,7 @@ export interface NexusGenFieldTypeNames {
     createUploadFolder: 'UploadFolderEntityResponse'
     createUsersPermissionsRole: 'UsersPermissionsCreateRolePayload'
     createUsersPermissionsUser: 'UsersPermissionsUserEntityResponse'
+    deleteFaq: 'FaqEntityResponse'
     deleteGlobal: 'GlobalEntityResponse'
     deleteHierarchy: 'HierarchyEntityResponse'
     deleteMenu: 'MenuEntityResponse'
@@ -2076,6 +2199,7 @@ export interface NexusGenFieldTypeNames {
     register: 'UsersPermissionsLoginPayload'
     removeFile: 'UploadFileEntityResponse'
     resetPassword: 'UsersPermissionsLoginPayload'
+    updateFaq: 'FaqEntityResponse'
     updateFileInfo: 'UploadFileEntityResponse'
     updateGlobal: 'GlobalEntityResponse'
     updateHierarchy: 'HierarchyEntityResponse'
@@ -2129,6 +2253,8 @@ export interface NexusGenFieldTypeNames {
     total: 'Int'
   }
   Query: { // field return type name
+    faq: 'FaqEntityResponse'
+    faqs: 'FaqEntityResponseCollection'
     global: 'GlobalEntityResponse'
     hierarchies: 'HierarchyEntityResponseCollection'
     hierarchy: 'HierarchyEntityResponse'
@@ -2393,6 +2519,13 @@ export interface NexusGenArgTypes {
       sort: Array<string | null> | null; // [String]
     }
   }
+  Faq: {
+    questions: { // args
+      filters?: NexusGenInputs['ComponentElementsQuestionAndAnswerFiltersInput'] | null; // ComponentElementsQuestionAndAnswerFiltersInput
+      pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
+      sort: Array<string | null> | null; // [String]
+    }
+  }
   Menu: {
     localizations: { // args
       filters?: NexusGenInputs['MenuFiltersInput'] | null; // MenuFiltersInput
@@ -2417,6 +2550,9 @@ export interface NexusGenArgTypes {
       currentPassword: string; // String!
       password: string; // String!
       passwordConfirmation: string; // String!
+    }
+    createFaq: { // args
+      data: NexusGenInputs['FaqInput']; // FaqInput!
     }
     createHierarchy: { // args
       data: NexusGenInputs['HierarchyInput']; // HierarchyInput!
@@ -2468,6 +2604,9 @@ export interface NexusGenArgTypes {
     }
     createUsersPermissionsUser: { // args
       data: NexusGenInputs['UsersPermissionsUserInput']; // UsersPermissionsUserInput!
+    }
+    deleteFaq: { // args
+      id: string; // ID!
     }
     deleteHierarchy: { // args
       id: string; // ID!
@@ -2529,6 +2668,10 @@ export interface NexusGenArgTypes {
       code: string; // String!
       password: string; // String!
       passwordConfirmation: string; // String!
+    }
+    updateFaq: { // args
+      data: NexusGenInputs['FaqInput']; // FaqInput!
+      id: string; // ID!
     }
     updateFileInfo: { // args
       id: string; // ID!
@@ -2594,6 +2737,14 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    faq: { // args
+      id?: string | null; // ID
+    }
+    faqs: { // args
+      filters?: NexusGenInputs['FaqFiltersInput'] | null; // FaqFiltersInput
+      pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
+      sort: Array<string | null> | null; // [String]
+    }
     hierarchies: { // args
       filters?: NexusGenInputs['HierarchyFiltersInput'] | null; // HierarchyFiltersInput
       pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
@@ -2719,10 +2870,10 @@ export interface NexusGenArgTypes {
 }
 
 export interface NexusGenAbstractTypeMembers {
-  GenericMorph: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentCode" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsButton" | "ComponentElementsHeadline" | "ComponentElementsPricingPlan" | "ComponentElementsResponsiveImage" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationDropdown" | "ComponentNavigationLink" | "ComponentNavigationLinkList" | "ComponentNavigationTableOfContents" | "Global" | "Hierarchy" | "I18NLocale" | "Menu" | "MenuItem" | "Page" | "SidebarLayout" | "UploadFile" | "UploadFolder" | "UsersPermissionsPermission" | "UsersPermissionsRole" | "UsersPermissionsUser"
+  GenericMorph: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentCode" | "ComponentContentFaq" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsButton" | "ComponentElementsHeadline" | "ComponentElementsPricingPlan" | "ComponentElementsQuestionAndAnswer" | "ComponentElementsResponsiveImage" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationDropdown" | "ComponentNavigationLink" | "ComponentNavigationLinkList" | "ComponentNavigationTableOfContents" | "Faq" | "Global" | "Hierarchy" | "I18NLocale" | "Menu" | "MenuItem" | "Page" | "SidebarLayout" | "UploadFile" | "UploadFolder" | "UsersPermissionsPermission" | "UsersPermissionsRole" | "UsersPermissionsUser"
   GlobalFooterDynamicZone: "ComponentElementsRichText" | "ComponentNavigationLinkList" | "Error"
   MenuItemComponentsDynamicZone: "ComponentContentPagePreviewList" | "ComponentNavigationLinkList" | "Error"
-  PageComponentsDynamicZone: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationLinkList" | "Error"
+  PageComponentsDynamicZone: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentFaq" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationLinkList" | "Error"
   SidebarLayoutContentComponentsDynamicZone: "ComponentContentCode" | "ComponentContentSectionHeadline" | "ComponentContentVideo" | "ComponentElementsRichText" | "Error"
   SidebarLayoutSidebarComponentsDynamicZone: "ComponentNavigationLinkList" | "ComponentNavigationTableOfContents" | "Error"
 }

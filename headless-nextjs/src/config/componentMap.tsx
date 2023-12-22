@@ -1,6 +1,7 @@
 import { ButtonBar } from "@/components/content/ButtonBar";
 import { ClientQuote } from "@/components/content/ClientQuote";
 import { Code } from "@/components/content/Code";
+import { Faq } from "@/components/content/Faq";
 import { Hero } from "@/components/content/Hero";
 import { ImageText } from "@/components/content/ImageText";
 import {
@@ -23,6 +24,7 @@ import {
   ButtonBarFragment,
   CodeFragment,
   DropdownFragment,
+  FaqFragment,
   ImageTextFragment,
   LinkFragment,
   LinkListFragment,
@@ -47,6 +49,11 @@ export const componentMap = {
   ),
   ComponentContentClientQuote: ClientQuote,
   ComponentContentCode: (props: CodeFragment) => <Code {...props} />,
+  ComponentContentFaq: (props: FaqFragment) => (
+    <Container>
+      <Faq {...props} />
+    </Container>
+  ),
   ComponentContentHero: Hero,
   ComponentContentImageText: (props: ImageTextFragment) => (
     <Container>

@@ -39,6 +39,17 @@ export interface ContentCode extends Schema.Component {
   };
 }
 
+export interface ContentFaq extends Schema.Component {
+  collectionName: 'components_content_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    faq: Attribute.Relation<'content.faq', 'oneToOne', 'api::faq.faq'>;
+  };
+}
+
 export interface ContentHero extends Schema.Component {
   collectionName: 'components_content_heroes';
   info: {
@@ -213,6 +224,18 @@ export interface ElementsPricingPlan extends Schema.Component {
   };
 }
 
+export interface ElementsQuestionAndAnswer extends Schema.Component {
+  collectionName: 'components_elements_question_and_answers';
+  info: {
+    displayName: 'Question and Answer';
+    description: '';
+  };
+  attributes: {
+    question: Attribute.String & Attribute.Required;
+    answer: Attribute.Blocks & Attribute.Required;
+  };
+}
+
 export interface ElementsResponsiveImage extends Schema.Component {
   collectionName: 'components_elements_responsive_images';
   info: {
@@ -329,6 +352,7 @@ declare module '@strapi/types' {
       'content.button-bar': ContentButtonBar;
       'content.client-quote': ContentClientQuote;
       'content.code': ContentCode;
+      'content.faq': ContentFaq;
       'content.hero': ContentHero;
       'content.image-grid': ContentImageGrid;
       'content.image-text': ContentImageText;
@@ -340,6 +364,7 @@ declare module '@strapi/types' {
       'elements.button': ElementsButton;
       'elements.headline': ElementsHeadline;
       'elements.pricing-plan': ElementsPricingPlan;
+      'elements.question-and-answer': ElementsQuestionAndAnswer;
       'elements.responsive-image': ElementsResponsiveImage;
       'elements.rich-text': ElementsRichText;
       'elements.spacer': ElementsSpacer;

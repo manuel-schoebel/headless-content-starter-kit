@@ -6,12 +6,16 @@ export interface ITextLink {
   target?: "_blank" | "_self" | null;
   label: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
-function TextLink({ label, href, target, className }: ITextLink) {
+function TextLink({ label, href, target, className, children }: ITextLink) {
   return (
-    <Link className={className ? className : ""} href={href}>
-      {label}
+    <Link
+      className={className ? className : "underline dark:text-white"}
+      href={href}
+    >
+      {label ? label : children}
     </Link>
   );
 }

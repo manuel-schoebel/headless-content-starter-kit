@@ -36,6 +36,9 @@ query getPage(
           ... on ComponentContentClientQuote {
             ...ClientQuoteFragment
           }
+          ... on ComponentContentFaq {
+            ...FaqFragment
+          }
           ... on ComponentContentPricing {
             ...PricingFragment
           }
