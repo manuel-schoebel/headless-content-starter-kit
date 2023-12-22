@@ -14,8 +14,6 @@ function Faq({ faq }: FaqFragment) {
   const questions = faq?.data?.attributes?.questions;
   const description = faq?.data?.attributes?.description;
 
-  console.log("questions", questions);
-
   if (!questions) {
     return null;
   }

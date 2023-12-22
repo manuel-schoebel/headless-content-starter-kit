@@ -7,13 +7,6 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   const { secret, path, locale } = await request.json();
 
-  console.log("revalidate", {
-    secret,
-    path,
-    locale,
-    token: process.env.FRONTEND_API_TOKEN,
-  });
-
   // Check the secret and next parameters
   // This secret should only be known to this route handler and the CMS
   if (secret !== process.env.FRONTEND_API_TOKEN) {
@@ -30,11 +23,7 @@ export async function POST(request: Request) {
     return new Response("invalid path", { status: 401 });
   }
 
-  console.log("revalidatePath", path);
-
   const revalidationPath = `/${locale}${path}`;
-  console.log("revalidationPath", revalidationPath);
-  console.log("path", path);
   try {
     // revalidatePath(revalidationPath);
     revalidatePath(path);

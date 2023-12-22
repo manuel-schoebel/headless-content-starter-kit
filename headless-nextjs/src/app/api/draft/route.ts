@@ -11,13 +11,6 @@ export async function GET(request: Request) {
   const locale = searchParams.get("locale");
   const disable = searchParams.get("disable");
 
-  console.log("draft", {
-    secret,
-    path,
-    locale,
-    token: process.env.FRONTEND_API_TOKEN,
-  });
-
   // Check the secret and next parameters
   // This secret should only be known to this route handler and the CMS
   if (secret !== process.env.FRONTEND_API_TOKEN) {
