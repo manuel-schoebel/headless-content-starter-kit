@@ -5,10 +5,10 @@ import {
   PagePreviewListFragment,
 } from "@/graphql/generated/graphql";
 import React, { Fragment } from "react";
-import { TextLink } from "../TextLink";
+import { TextLink } from "@/components/navigation/TextLink";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { ComponentRenderer } from "../../ComponentRenderer";
+import { ComponentRenderer } from "@/components/ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
 import { MenuPagePreviewList } from "./MenuPagePreviewList";
 import { MenuLink } from "./MenuLink";

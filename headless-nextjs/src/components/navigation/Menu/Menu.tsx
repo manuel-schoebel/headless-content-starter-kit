@@ -5,8 +5,8 @@ import {
 } from "@/graphql/generated/graphql";
 import { Dialog, Popover } from "@headlessui/react";
 import React, { Fragment, ReactNode, useState } from "react";
-import { MenuItem } from "./MenuItem";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { MenuItem } from "./MenuItem";
 import { MobileMenuItem } from "./MobileMenuItem";
 
 function Menu({

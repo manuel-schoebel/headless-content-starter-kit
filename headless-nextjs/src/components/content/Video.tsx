@@ -6,8 +6,8 @@ import {
 } from "@/graphql/generated/graphql";
 import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
-import { getConsentManager } from "../actions/ConsentManager";
-import { GrantVideoConsent } from "../actions/GrantVideoConsent";
+import { getConsentManager } from "@/components/actions/ConsentManager";
+import { GrantVideoConsent } from "@/components/actions/GrantVideoConsent";
 
 function Video({ consentBackgroundImage, youtubeId }: VideoFragment) {
   const { isConsentManagerInitialized } = useGlobal();

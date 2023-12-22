@@ -3,7 +3,7 @@ import {
   SectionHeadlineFragment,
 } from "@/graphql/generated/graphql";
 import React from "react";
-import { Headline } from "../elements/Headline";
+import { Headline } from "@/components/elements/Headline";
 
 function SectionHeadline({
   headline,

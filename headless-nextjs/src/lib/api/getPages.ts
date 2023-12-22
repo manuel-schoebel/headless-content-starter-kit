@@ -1,5 +1,5 @@
 import { GetPagesDocument } from "@/graphql/generated/graphql";
-import { getClient } from "../graphqlRequestClient";
+import { getClient } from "@/lib/graphqlRequestClient";
 
 export async function getPages({
   limit = 3,

@@ -4,7 +4,7 @@ import {
   CreatePaypalOrderVariables,
   PaypalCreateOrderResponse,
 } from "@/graphql/generated/graphql";
-import { getClient } from "../graphqlRequestClient";
+import { getClient } from "@/lib/graphqlRequestClient";
 
 export async function createPaypalOrder({
   amount,

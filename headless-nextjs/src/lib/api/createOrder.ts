@@ -2,10 +2,9 @@
 import {
   CreateOrderDocument,
   CreateOrderVariables,
-  CreateOrder,
   OrderEntity,
 } from "@/graphql/generated/graphql";
-import { getClient } from "../graphqlRequestClient";
+import { getClient } from "@/lib/graphqlRequestClient";
 
 export async function createOrder({
   address,

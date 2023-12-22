@@ -3,8 +3,8 @@ import { ITextLink } from "./TextLink";
 import Link from "next/link";
 import Image from "next/image";
 import { getImageUrl } from "@/lib/strapi";
-import { Paragraph } from "../elements/Paragraph";
-import { Headline } from "../elements/Headline";
+import { Paragraph } from "@/components/elements/Paragraph";
+import { Headline } from "@/components/elements/Headline";
 
 export interface ILinkList {
   linkListHeadline?: string | null;

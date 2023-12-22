@@ -1,6 +1,6 @@
+import { draftMode } from "next/headers";
 import { GetPageDocument, PublicationState } from "@/graphql/generated/graphql";
 import { getClient } from "@/lib/graphqlRequestClient";
-import { draftMode } from "next/headers";
 
 export const getPageByPath = async (
   path: string,

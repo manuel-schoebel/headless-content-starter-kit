@@ -1,11 +1,10 @@
 "use client";
-import { ComponentNavigationDropdown } from "@/graphql/generated/graphql";
 import React from "react";
 import { Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ITextLink } from "./TextLink";
+import { ITextLink } from "@/components/navigation/TextLink";
 
 export interface IDropdown {
   links: ITextLink[];

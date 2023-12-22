@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "../actions/Button";
+import { Button } from "@/components/actions/Button";
 
 export interface ILinkButton {
   disabled?: boolean;

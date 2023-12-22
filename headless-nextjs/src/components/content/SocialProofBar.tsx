@@ -1,8 +1,8 @@
 import { SocialProofBarFragment } from "@/graphql/generated/graphql";
-import React, { Fragment } from "react";
-import { Avatar } from "../elements/Avatar";
+import React from "react";
+import { Avatar } from "@/components/elements/Avatar";
 import { getImageUrl } from "@/lib/strapi";
-import { Container } from "../layout/Container";
+import { Container } from "@/components/layout/Container";
 
 function SocialProofBar({ avatars, html }: SocialProofBarFragment) {
   return (

@@ -1,12 +1,12 @@
 import React from "react";
-import { MenuItem } from "./MenuItem";
-import { TextLink } from "../TextLink";
+import { TextLink } from "@/components/navigation/TextLink";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { ComponentRenderer } from "../../ComponentRenderer";
+import { ComponentRenderer } from "@/components/ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
 import { PagePreviewListFragment } from "@/graphql/generated/graphql";
 import { MenuPagePreviewListMobile } from "./MenuPagePreviewListMobile";
+import { MenuItem } from "./MenuItem";
 
 function MobileMenuItem({ page, url, label, target, components }: MenuItem) {
   const href = page?.data?.attributes?.path || url;

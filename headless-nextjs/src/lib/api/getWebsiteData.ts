@@ -1,5 +1,5 @@
 import { GetWebsiteDataDocument } from "@/graphql/generated/graphql";
-import { getClient } from "../graphqlRequestClient";
+import { getClient } from "@/lib/graphqlRequestClient";
 
 export const getWebsiteData = async (locale: string) => {
   // todo: add mainMenu caching tag

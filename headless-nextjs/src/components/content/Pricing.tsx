@@ -1,8 +1,8 @@
 import { PricingFragment } from "@/graphql/generated/graphql";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import React from "react";
-import { LinkButton } from "../navigation/LinkButton";
-import { Paragraph } from "../elements/Paragraph";
+import { LinkButton } from "@/components/navigation/LinkButton";
+import { Paragraph } from "@/components/elements/Paragraph";
 
 function Pricing({ plans }: PricingFragment) {
   if (!plans || plans.length === 0) {

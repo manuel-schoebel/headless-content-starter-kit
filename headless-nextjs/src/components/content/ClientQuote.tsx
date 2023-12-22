@@ -2,7 +2,7 @@ import { ClientQuoteFragment } from "@/graphql/generated/graphql";
 import { getImageUrl } from "@/lib/strapi";
 import Image from "next/image";
 import React from "react";
-import { Paragraph } from "../elements/Paragraph";
+import { Paragraph } from "@/components/elements/Paragraph";
 
 function ClientQuote({
   avatar,

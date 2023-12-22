@@ -1,11 +1,9 @@
 import { Maybe, UploadFileEntityResponse } from "@/graphql/generated/graphql";
-import { useLocale } from "@/hooks/useLocale";
 import Image from "next/image";
 import { Button } from "./Button";
 import { getImageUrl } from "@/lib/strapi";
 import { PlayIcon } from "@heroicons/react/24/solid";
-import { Paragraph } from "../elements/Paragraph";
-import { Headline } from "../elements/Headline";
+import { Headline } from "@/components/elements/Headline";
 
 interface IGrantVideoConsent {
   consentBackgroundImage: Maybe<UploadFileEntityResponse> | undefined;

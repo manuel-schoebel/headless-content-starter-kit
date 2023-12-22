@@ -6,13 +6,13 @@ import {
   VideoFragment,
 } from "@/graphql/generated/graphql";
 import React from "react";
-import { Container } from "./Container";
-import { ComponentRenderer } from "../ComponentRenderer";
+import { Container } from "@/components/layout/Container";
+import { ComponentRenderer } from "@/components/ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
-import { RichText } from "../elements/RichText";
-import { SectionHeadline } from "../content/SectionHeadline";
-import { Video } from "../content/Video";
-import { LinkList } from "../navigation/LinkList";
+import { RichText } from "@/components/elements/RichText";
+import { SectionHeadline } from "@/components/content/SectionHeadline";
+import { Video } from "@/components/content/Video";
+import { LinkList } from "@/components/navigation/LinkList";
 import { getLinkListProps } from "@/lib/strapi";
 
 function SidebarLayout({ sidebar_layout }: SidebarLayoutFragment) {
