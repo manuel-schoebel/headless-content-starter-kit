@@ -1269,7 +1269,7 @@ export interface NexusGenUnions {
   GlobalFooterDynamicZone: NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
   MenuItemComponentsDynamicZone: NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
   PageComponentsDynamicZone: NexusGenRootTypes['ComponentContentButtonBar'] | NexusGenRootTypes['ComponentContentClientQuote'] | NexusGenRootTypes['ComponentContentFaq'] | NexusGenRootTypes['ComponentContentHero'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentImageText'] | NexusGenRootTypes['ComponentContentPagePreviewList'] | NexusGenRootTypes['ComponentContentPricing'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentSocialProofBar'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['ComponentElementsSpacer'] | NexusGenRootTypes['ComponentLayoutsSidebarLayout'] | NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['Error'];
-  SidebarLayoutContentComponentsDynamicZone: NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['Error'];
+  SidebarLayoutContentComponentsDynamicZone: NexusGenRootTypes['ComponentContentCode'] | NexusGenRootTypes['ComponentContentImageGrid'] | NexusGenRootTypes['ComponentContentSectionHeadline'] | NexusGenRootTypes['ComponentContentVideo'] | NexusGenRootTypes['ComponentElementsRichText'] | NexusGenRootTypes['Error'];
   SidebarLayoutSidebarComponentsDynamicZone: NexusGenRootTypes['ComponentNavigationLinkList'] | NexusGenRootTypes['ComponentNavigationTableOfContents'] | NexusGenRootTypes['Error'];
 }
 
@@ -2874,7 +2874,7 @@ export interface NexusGenAbstractTypeMembers {
   GlobalFooterDynamicZone: "ComponentElementsRichText" | "ComponentNavigationLinkList" | "Error"
   MenuItemComponentsDynamicZone: "ComponentContentPagePreviewList" | "ComponentNavigationLinkList" | "Error"
   PageComponentsDynamicZone: "ComponentContentButtonBar" | "ComponentContentClientQuote" | "ComponentContentFaq" | "ComponentContentHero" | "ComponentContentImageGrid" | "ComponentContentImageText" | "ComponentContentPagePreviewList" | "ComponentContentPricing" | "ComponentContentSectionHeadline" | "ComponentContentSocialProofBar" | "ComponentContentVideo" | "ComponentElementsRichText" | "ComponentElementsSpacer" | "ComponentLayoutsSidebarLayout" | "ComponentNavigationLinkList" | "Error"
-  SidebarLayoutContentComponentsDynamicZone: "ComponentContentCode" | "ComponentContentSectionHeadline" | "ComponentContentVideo" | "ComponentElementsRichText" | "Error"
+  SidebarLayoutContentComponentsDynamicZone: "ComponentContentCode" | "ComponentContentImageGrid" | "ComponentContentSectionHeadline" | "ComponentContentVideo" | "ComponentElementsRichText" | "Error"
   SidebarLayoutSidebarComponentsDynamicZone: "ComponentNavigationLinkList" | "ComponentNavigationTableOfContents" | "Error"
 }
 

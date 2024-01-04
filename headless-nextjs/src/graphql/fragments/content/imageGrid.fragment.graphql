@@ -1,0 +1,10 @@
+fragment ImageGridFragment on ComponentContentImageGrid {
+  __typename
+  id
+  gap
+  images {
+    data {
+      ...StrapiImageFragment
+    }
+  }
+}

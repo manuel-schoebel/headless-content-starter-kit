@@ -20,6 +20,9 @@ fragment SidebarLayoutFragment on ComponentLayoutsSidebarLayout {
           ... on ComponentContentCode {
             ...CodeFragment
           }
+          ... on ComponentContentImageGrid {
+            ...ImageGridFragment
+          }
           ... on ComponentContentSectionHeadline {
             ...SectionHeadlineFragment
           }

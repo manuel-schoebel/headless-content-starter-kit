@@ -39,10 +39,7 @@
         }
       },
       "type": "dynamiczone",
-      "components": [
-        "navigation.link-list",
-        "navigation.table-of-contents"
-      ]
+      "components": ["navigation.link-list", "navigation.table-of-contents"]
     },
     "contentComponents": {
       "pluginOptions": {
@@ -55,7 +52,8 @@
         "content.section-headline",
         "elements.rich-text",
         "content.video",
-        "content.code"
+        "content.code",
+        "content.image-grid"
       ]
     }
   }

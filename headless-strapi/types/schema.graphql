@@ -1404,7 +1404,7 @@ type SidebarLayout {
   updatedAt: DateTime
 }
 
-union SidebarLayoutContentComponentsDynamicZone = ComponentContentCode | ComponentContentSectionHeadline | ComponentContentVideo | ComponentElementsRichText | Error
+union SidebarLayoutContentComponentsDynamicZone = ComponentContentCode | ComponentContentImageGrid | ComponentContentSectionHeadline | ComponentContentVideo | ComponentElementsRichText | Error
 
 scalar SidebarLayoutContentComponentsDynamicZoneInput
 

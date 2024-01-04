@@ -6,13 +6,13 @@ import {
   VideoFragment,
 } from "@/graphql/generated/graphql";
 import React from "react";
-import { Container } from "@/components/layout/Container";
-import { ComponentRenderer } from "@/components/ComponentRenderer";
+import { Container } from "./Container";
+import { ComponentRenderer } from "../ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
-import { RichText } from "@/components/elements/RichText";
-import { SectionHeadline } from "@/components/content/SectionHeadline";
-import { Video } from "@/components/content/Video";
-import { LinkList } from "@/components/navigation/LinkList";
+import { RichText } from "../elements/RichText";
+import { SectionHeadline } from "../content/SectionHeadline";
+import { Video } from "../content/Video";
+import { LinkList } from "../navigation/LinkList";
 import { getLinkListProps } from "@/lib/strapi";
 
 function SidebarLayout({ sidebar_layout }: SidebarLayoutFragment) {
@@ -62,7 +62,7 @@ function SidebarLayout({ sidebar_layout }: SidebarLayoutFragment) {
           components={sidebarComponents || []}
         />
       </div>
-      <div className="md:col-span-3 lg:col-span-2">
+      <div className="md:col-span-3 lg:col-span-2 max-w-prose">
         <ComponentRenderer
           componentMap={contentComponentMap}
           components={contentComponents || []}

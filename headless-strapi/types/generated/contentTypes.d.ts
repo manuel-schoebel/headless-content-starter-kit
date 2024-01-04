@@ -1070,7 +1070,8 @@ export interface ApiSidebarLayoutSidebarLayout extends Schema.CollectionType {
         'content.section-headline',
         'elements.rich-text',
         'content.video',
-        'content.code'
+        'content.code',
+        'content.image-grid'
       ]
     > &
       Attribute.SetPluginOptions<{
