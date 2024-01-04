@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Headings } from "./Headings";
 import { TableOfContentsFragment } from "@/graphql/generated/graphql";
+import { Headline } from "@/components/elements/Headline";
 
 export type IHeading = {
   id: string;
@@ -53,7 +54,11 @@ export function TableOfContents({
   return (
     <div id="table-of-content">
       <nav aria-label="Table of contents">
-        {name && <p>{name}</p>}
+        {name && (
+          <Headline variant="h3" className="mb-4">
+            {name}
+          </Headline>
+        )}
         {nestedHeadings && nestedHeadings.length > 0 && (
           <Headings headings={nestedHeadings} />
         )}

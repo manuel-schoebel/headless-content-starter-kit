@@ -6,6 +6,15 @@
   .hero-highlight {
     @apply text-red-500 dark:text-red-400;
   }
+  .counter-reset-item {
+    counter-reset: item;
+  }
+  .counter-increment-item {
+    counter-increment: item;
+  }
+  .counter-content {
+    content: counters(item, ".") " ";
+  }
 }
 
 html, body {

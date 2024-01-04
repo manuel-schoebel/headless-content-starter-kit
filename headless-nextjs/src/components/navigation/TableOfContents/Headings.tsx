@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IHeading } from "./TableOfContents";
-import styles from "./TableOfContents.module.css";
+import { TextLink } from "../TextLink";
 
 export function Headings({ headings }: { headings: IHeading[] }): JSX.Element {
   const [activeId, setActiveId] = useState(
@@ -49,11 +49,12 @@ export function Headings({ headings }: { headings: IHeading[] }): JSX.Element {
   }, []);
 
   return (
-    <ol className={`space-y-8 ${styles.nestedOlOuter}`}>
+    <ol className={`space-y-2 list-inside leading-8 counter-reset-item`}>
       {headings.map((heading) => (
-        <li key={heading.id} className={`leading-6 ${styles.outerLi}`}>
-          <a
+        <li key={heading.id} className={`leading-6 font-normal`}>
+          <TextLink
             href={`#${heading.id}`}
+            label={heading.title}
             onClick={(e) => {
               e.preventDefault();
               document.getElementById(`${heading.id}`)?.scrollIntoView({
@@ -62,18 +63,17 @@ export function Headings({ headings }: { headings: IHeading[] }): JSX.Element {
             }}
             className={`${
               heading.id === activeId
-                ? "font-semibold border-b-4 border-boston-blue-100 mb-2 inline-block"
+                ? "text-primary dark:text-primary-light mb-2 inline-block"
                 : ""
             }`}
-          >
-            {heading.title}
-          </a>
+          />
           {heading.items.length > 0 && (
-            <ol className={`space-y-2 mt-2 ${styles.nestedOl}`}>
+            <ol className={`space-y-2 list-inside counter-reset-item`}>
               {heading.items.map((child) => (
-                <li key={child.id} className={`${styles.nestedLi} `}>
-                  <a
+                <li key={child.id} className={`ml-4 font-normal`}>
+                  <TextLink
                     href={`#${child.id}`}
+                    label={child.title}
                     onClick={(e) => {
                       e.preventDefault();
                       document.getElementById(`${child.id}`)?.scrollIntoView({
@@ -82,12 +82,10 @@ export function Headings({ headings }: { headings: IHeading[] }): JSX.Element {
                     }}
                     className={`${
                       child.id === activeId
-                        ? "font-semibold border-b-4 border-boston-blue-100 mb-2 inline-block"
+                        ? "text-primary dark:text-primary-light mb-2 inline-block"
                         : ""
                     }`}
-                  >
-                    {child.title}
-                  </a>
+                  />
                 </li>
               ))}
             </ol>
