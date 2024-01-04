@@ -22,6 +22,7 @@ import { TableOfContents } from "@/components/navigation/TableOfContents/TableOf
 import { TextLink } from "@/components/navigation/TextLink";
 import {
   ButtonBarFragment,
+  ClientQuoteFragment,
   CodeFragment,
   DropdownFragment,
   FaqFragment,
@@ -46,7 +47,11 @@ export const componentMap = {
       <ButtonBar {...props} />
     </div>
   ),
-  ComponentContentClientQuote: ClientQuote,
+  ComponentContentClientQuote: (props: ClientQuoteFragment) => (
+    <Container>
+      <ClientQuote {...props} />
+    </Container>
+  ),
   ComponentContentCode: (props: CodeFragment) => <Code {...props} />,
   ComponentContentFaq: (props: FaqFragment) => (
     <Container>
@@ -72,9 +77,9 @@ export const componentMap = {
   ),
   ComponentContentSocialProofBar: SocialProofBar,
   ComponentContentVideo: (props: VideoFragment) => (
-    <div className="flex justify-center">
+    <Container className="flex justify-center">
       <Video {...props} />
-    </div>
+    </Container>
   ),
 
   // Elements
