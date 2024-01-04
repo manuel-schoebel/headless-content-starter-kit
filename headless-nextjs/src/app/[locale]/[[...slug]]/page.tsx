@@ -8,6 +8,9 @@ import { Enum_Page_Metarobots } from "@/graphql/generated/graphql";
 import { getPageByPath } from "@/lib/api/getPageByPath";
 import { getWebsiteData } from "@/lib/api/getWebsiteData";
 
+export const runtime = "nodejs";
+export const dynamic = "force-static";
+
 export async function generateMetadata({
   params,
 }: {

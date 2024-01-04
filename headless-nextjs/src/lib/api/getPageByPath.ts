@@ -1,36 +1,34 @@
-import { draftMode } from "next/headers";
 import { GetPageDocument, PublicationState } from "@/graphql/generated/graphql";
 import { getClient } from "@/lib/graphqlRequestClient";
+import { draftMode } from "next/headers";
+import { cache as reactCache } from "react";
 
-export const getPageByPath = async (
-  path: string,
-  locale: string,
-  isDraft?: boolean
-) => {
-  const { isEnabled } = draftMode();
-  const client = getClient({
-    cache: isDraft || isEnabled ? "no-store" : "default",
-  });
+export const getPageByPath = reactCache(
+  async (path: string, locale: string, isDraft?: boolean) => {
+    const { isEnabled } = draftMode();
 
-  const filters = {
-    path: {
-      eq: path,
-    },
-  };
+    const client = getClient();
 
-  const response = await client.request(GetPageDocument, {
-    locale,
-    filters,
-    limit: 1,
-    offset: 0,
-    publicationState:
-      isDraft || isEnabled ? PublicationState.Preview : PublicationState.Live,
-  });
+    const filters = {
+      path: {
+        eq: path,
+      },
+    };
 
-  if (!response?.pages?.data || response?.pages?.data.length === 0) {
-    return;
+    const response = await client.request(GetPageDocument, {
+      locale,
+      filters,
+      limit: 1,
+      offset: 0,
+      publicationState:
+        isDraft || isEnabled ? PublicationState.Preview : PublicationState.Live,
+    });
+
+    if (!response?.pages?.data || response?.pages?.data.length === 0) {
+      return;
+    }
+
+    const [page] = response?.pages?.data;
+    return page;
   }
-
-  const [page] = response?.pages?.data;
-  return page;
-};
+);

@@ -1,9 +1,10 @@
+import { cache as reactCache } from "react";
 import { GetWebsiteDataDocument } from "@/graphql/generated/graphql";
-import { getClient } from "@/lib/graphqlRequestClient";
+import { getClient } from "../graphqlRequestClient";
 
-export const getWebsiteData = async (locale: string) => {
+export const getWebsiteData = reactCache(async (locale: string) => {
   // todo: add mainMenu caching tag
-  const client = getClient({});
+  const client = getClient();
 
   const response = await client.request(GetWebsiteDataDocument, {
     locale,
@@ -18,4 +19,4 @@ export const getWebsiteData = async (locale: string) => {
   );
   const global = response?.global?.data;
   return { mainNavigation, global };
-};
+});
