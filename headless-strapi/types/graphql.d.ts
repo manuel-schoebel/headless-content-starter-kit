@@ -292,13 +292,11 @@ export interface NexusGenInputs {
     and?: Array<NexusGenInputs['ComponentElementsSpacerFiltersInput'] | null> | null; // [ComponentElementsSpacerFiltersInput]
     not?: NexusGenInputs['ComponentElementsSpacerFiltersInput'] | null; // ComponentElementsSpacerFiltersInput
     or?: Array<NexusGenInputs['ComponentElementsSpacerFiltersInput'] | null> | null; // [ComponentElementsSpacerFiltersInput]
-    spaceBottom?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
-    spaceTop?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    size?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
   }
   ComponentElementsSpacerInput: { // input type
     id?: string | null; // ID
-    spaceBottom?: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM'] | null; // ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM
-    spaceTop?: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SPACETOP'] | null; // ENUM_COMPONENTELEMENTSSPACER_SPACETOP
+    size?: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SIZE'] | null; // ENUM_COMPONENTELEMENTSSPACER_SIZE
   }
   ComponentLayoutsSidebarLayoutFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentLayoutsSidebarLayoutFiltersInput'] | null> | null; // [ComponentLayoutsSidebarLayoutFiltersInput]
@@ -897,8 +895,7 @@ export interface NexusGenEnums {
   ENUM_COMPONENTELEMENTSHEADLINE_VARIANT: "h1" | "h2" | "h3" | "h4" | "h5"
   ENUM_COMPONENTELEMENTSRESPONSIVEIMAGE_SCREENSIZE: "desktop" | "large mobile" | "medium mobile" | "small mobile" | "tablet"
   ENUM_COMPONENTELEMENTSRICHTEXT_ALIGN: "center" | "left" | "right"
-  ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM: "large" | "medium" | "small"
-  ENUM_COMPONENTELEMENTSSPACER_SPACETOP: "large" | "medium" | "small"
+  ENUM_COMPONENTELEMENTSSPACER_SIZE: "large" | "medium" | "small"
   ENUM_COMPONENTNAVIGATIONLINKLIST_ALIGN: "center" | "left" | "right"
   ENUM_COMPONENTNAVIGATIONLINKLIST_ORIENTATION: "horizontal" | "vertical"
   ENUM_COMPONENTNAVIGATIONLINK_TARGET: "_blank" | "_self"
@@ -1030,8 +1027,7 @@ export interface NexusGenObjects {
   }
   ComponentElementsSpacer: { // root type
     id: string; // ID!
-    spaceBottom?: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM'] | null; // ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM
-    spaceTop?: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SPACETOP'] | null; // ENUM_COMPONENTELEMENTSSPACER_SPACETOP
+    size?: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SIZE'] | null; // ENUM_COMPONENTELEMENTSSPACER_SIZE
   }
   ComponentLayoutsSidebarLayout: { // root type
     id: string; // ID!
@@ -1400,8 +1396,7 @@ export interface NexusGenFieldTypes {
   }
   ComponentElementsSpacer: { // field return type
     id: string; // ID!
-    spaceBottom: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM'] | null; // ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM
-    spaceTop: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SPACETOP'] | null; // ENUM_COMPONENTELEMENTSSPACER_SPACETOP
+    size: NexusGenEnums['ENUM_COMPONENTELEMENTSSPACER_SIZE'] | null; // ENUM_COMPONENTELEMENTSSPACER_SIZE
   }
   ComponentLayoutsSidebarLayout: { // field return type
     id: string; // ID!
@@ -1992,8 +1987,7 @@ export interface NexusGenFieldTypeNames {
   }
   ComponentElementsSpacer: { // field return type name
     id: 'ID'
-    spaceBottom: 'ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM'
-    spaceTop: 'ENUM_COMPONENTELEMENTSSPACER_SPACETOP'
+    size: 'ENUM_COMPONENTELEMENTSSPACER_SIZE'
   }
   ComponentLayoutsSidebarLayout: { // field return type name
     id: 'ID'

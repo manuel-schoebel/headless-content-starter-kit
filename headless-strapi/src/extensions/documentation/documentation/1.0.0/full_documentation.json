@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-01-04T14:10:55.153Z"
+    "x-generation-date": "2024-01-04T14:13:58.704Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4381,15 +4381,7 @@
                                 "__component": {
                                   "type": "string"
                                 },
-                                "spaceTop": {
-                                  "type": "string",
-                                  "enum": [
-                                    "small",
-                                    "medium",
-                                    "large"
-                                  ]
-                                },
-                                "spaceBottom": {
+                                "size": {
                                   "type": "string",
                                   "enum": [
                                     "small",
@@ -7665,15 +7657,7 @@
                                 "__component": {
                                   "type": "string"
                                 },
-                                "spaceTop": {
-                                  "type": "string",
-                                  "enum": [
-                                    "small",
-                                    "medium",
-                                    "large"
-                                  ]
-                                },
-                                "spaceBottom": {
+                                "size": {
                                   "type": "string",
                                   "enum": [
                                     "small",
@@ -11101,15 +11085,7 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "spaceTop": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "small",
-                                                  "medium",
-                                                  "large"
-                                                ]
-                                              },
-                                              "spaceBottom": {
+                                              "size": {
                                                 "type": "string",
                                                 "enum": [
                                                   "small",
@@ -14900,15 +14876,7 @@
                                 "__component": {
                                   "type": "string"
                                 },
-                                "spaceTop": {
-                                  "type": "string",
-                                  "enum": [
-                                    "small",
-                                    "medium",
-                                    "large"
-                                  ]
-                                },
-                                "spaceBottom": {
+                                "size": {
                                   "type": "string",
                                   "enum": [
                                     "small",
@@ -19336,15 +19304,7 @@
                                 "__component": {
                                   "type": "string"
                                 },
-                                "spaceTop": {
-                                  "type": "string",
-                                  "enum": [
-                                    "small",
-                                    "medium",
-                                    "large"
-                                  ]
-                                },
-                                "spaceBottom": {
+                                "size": {
                                   "type": "string",
                                   "enum": [
                                     "small",
@@ -20271,15 +20231,7 @@
           "__component": {
             "type": "string"
           },
-          "spaceTop": {
-            "type": "string",
-            "enum": [
-              "small",
-              "medium",
-              "large"
-            ]
-          },
-          "spaceBottom": {
+          "size": {
             "type": "string",
             "enum": [
               "small",

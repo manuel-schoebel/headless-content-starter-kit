@@ -454,22 +454,19 @@ input ComponentElementsRichTextInput {
 
 type ComponentElementsSpacer {
   id: ID!
-  spaceBottom: ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM
-  spaceTop: ENUM_COMPONENTELEMENTSSPACER_SPACETOP
+  size: ENUM_COMPONENTELEMENTSSPACER_SIZE
 }
 
 input ComponentElementsSpacerFiltersInput {
   and: [ComponentElementsSpacerFiltersInput]
   not: ComponentElementsSpacerFiltersInput
   or: [ComponentElementsSpacerFiltersInput]
-  spaceBottom: StringFilterInput
-  spaceTop: StringFilterInput
+  size: StringFilterInput
 }
 
 input ComponentElementsSpacerInput {
   id: ID
-  spaceBottom: ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM
-  spaceTop: ENUM_COMPONENTELEMENTSSPACER_SPACETOP
+  size: ENUM_COMPONENTELEMENTSSPACER_SIZE
 }
 
 type ComponentLayoutsSidebarLayout {
@@ -713,13 +710,7 @@ enum ENUM_COMPONENTELEMENTSRICHTEXT_ALIGN {
   right
 }
 
-enum ENUM_COMPONENTELEMENTSSPACER_SPACEBOTTOM {
-  large
-  medium
-  small
-}
-
-enum ENUM_COMPONENTELEMENTSSPACER_SPACETOP {
+enum ENUM_COMPONENTELEMENTSSPACER_SIZE {
   large
   medium
   small

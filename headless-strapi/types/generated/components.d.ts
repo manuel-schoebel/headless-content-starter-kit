@@ -271,10 +271,10 @@ export interface ElementsSpacer extends Schema.Component {
   info: {
     displayName: 'Spacer';
     icon: 'expand';
+    description: '';
   };
   attributes: {
-    spaceTop: Attribute.Enumeration<['small', 'medium', 'large']>;
-    spaceBottom: Attribute.Enumeration<['small', 'medium', 'large']>;
+    size: Attribute.Enumeration<['small', 'medium', 'large']>;
   };
 }
 

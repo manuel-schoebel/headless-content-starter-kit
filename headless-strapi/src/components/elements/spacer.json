@@ -2,25 +2,14 @@
   "collectionName": "components_elements_spacers",
   "info": {
     "displayName": "Spacer",
-    "icon": "expand"
+    "icon": "expand",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "spaceTop": {
+    "size": {
       "type": "enumeration",
-      "enum": [
-        "small",
-        "medium",
-        "large"
-      ]
-    },
-    "spaceBottom": {
-      "type": "enumeration",
-      "enum": [
-        "small",
-        "medium",
-        "large"
-      ]
+      "enum": ["small", "medium", "large"]
     }
   }
 }
