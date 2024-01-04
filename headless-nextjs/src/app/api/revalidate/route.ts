@@ -25,10 +25,9 @@ export async function POST(request: Request) {
 
   const revalidationPath = `/${locale}${path}`;
   try {
-    // revalidatePath(revalidationPath);
-    revalidatePath(path);
+    revalidatePath(revalidationPath);
   } catch (e) {
-    console.log("error revalidating", e);
+    console.error("error revalidating", e);
     throw e;
   }
   return NextResponse.json({ revalidate: true });

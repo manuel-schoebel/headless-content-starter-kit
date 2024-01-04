@@ -23,7 +23,7 @@ export async function GET(request: Request) {
     return new Response("disabled", { status: 200 });
   }
   if (!path) {
-    return new Response("Invalid path", { status: 401 });
+    return new Response("No path given", { status: 401 });
   }
   const page = await getPageByPath(path, locale || defaultLocale, true);
   if (!page?.attributes?.path) {

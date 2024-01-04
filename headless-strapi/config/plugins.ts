@@ -10,8 +10,7 @@ const plugins = ({ env }) => {
       config: {
         enablePreviewUrl: environmentConfig.enablePreviewUrl,
         revalidationUrl: environmentConfig.revalidationUrl,
-        frontendRevalidationApiToken:
-          process.env.FRONTEND_REVALIDATION_API_TOKEN,
+        frontendRevalidationApiToken: process.env.FRONTEND_API_TOKEN,
       },
     },
     graphql: {

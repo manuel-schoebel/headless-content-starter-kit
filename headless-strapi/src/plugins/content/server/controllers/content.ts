@@ -8,21 +8,29 @@ export default ({ strapi }: { strapi: Strapi }) => ({
 
     const { config } = strapi.plugin("content");
     const enablePreviewUrl = config("enablePreviewUrl");
-    const frontendRevalidationApiToken = config("frontendRevalidationApiToken");
+    const frontendRevalidationApiToken = config<string, string>(
+      "frontendRevalidationApiToken"
+    );
 
     ctx.body = {
       success: true,
-      previewUrl: `${enablePreviewUrl}?path=${path}&locale=${locale}&secret=${frontendRevalidationApiToken}`,
+      previewUrl: `${enablePreviewUrl}?path=${path}&locale=${locale}&secret=${encodeURIComponent(
+        frontendRevalidationApiToken
+      )}`,
     };
   },
   async disablePreview(ctx, next) {
     const { config } = strapi.plugin("content");
     const enablePreviewUrl = config("enablePreviewUrl");
-    const frontendRevalidationApiToken = config("frontendRevalidationApiToken");
+    const frontendRevalidationApiToken = config<string, string>(
+      "frontendRevalidationApiToken"
+    );
 
     ctx.body = {
       success: true,
-      disablePreviewUrl: `${enablePreviewUrl}?disable=true&secret=${frontendRevalidationApiToken}`,
+      disablePreviewUrl: `${enablePreviewUrl}?disable=true&secret=${encodeURIComponent(
+        frontendRevalidationApiToken
+      )}`,
     };
   },
   async revalidate(ctx) {
@@ -31,22 +39,20 @@ export default ({ strapi }: { strapi: Strapi }) => ({
 
     const { config } = strapi.plugin("content");
     const revalidationUrl = config("revalidationUrl");
-    const frontendRevalidationApiToken = config("frontendRevalidationApiToken");
+    const frontendRevalidationApiToken =
+      config<string, string>("frontendRevalidationApiToken") || "";
+    const payload = {
+      path,
+      locale,
+      secret: frontendRevalidationApiToken,
+    };
 
     try {
-      await axios.post(
-        `${revalidationUrl}`,
-        {
-          path,
-          locale,
-          secret: frontendRevalidationApiToken,
+      await axios.post(`${revalidationUrl}`, payload, {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      });
       ctx.body = { success: true };
     } catch (e: any) {
       console.log("error revalidating", e);
