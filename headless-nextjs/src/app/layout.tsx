@@ -7,6 +7,7 @@ import { config } from "@/config";
 const argentum = localFont({
   variable: "--font-argentum",
   display: "swap",
+  preload: true,
   src: [
     {
       path: "./fonts/argentum-sans/ArgentumSans-Regular.ttf",
@@ -29,6 +30,7 @@ const argentum = localFont({
 const source = localFont({
   variable: "--font-source",
   display: "swap",
+  preload: true,
   src: [
     {
       path: "./fonts/source-sans-pro/SourceSansPro-Regular.ttf",
