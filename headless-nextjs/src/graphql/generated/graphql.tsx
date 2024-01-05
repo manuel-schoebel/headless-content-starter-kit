@@ -587,7 +587,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentCode | ComponentContentFaq | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsButton | ComponentElementsHeadline | ComponentElementsPricingPlan | ComponentElementsQuestionAndAnswer | ComponentElementsResponsiveImage | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationDropdown | ComponentNavigationLink | ComponentNavigationLinkList | ComponentNavigationTableOfContents | Faq | Global | Hierarchy | I18NLocale | Menu | MenuItem | Page | SidebarLayout | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentContentButtonBar | ComponentContentClientQuote | ComponentContentCode | ComponentContentFaq | ComponentContentHero | ComponentContentImageGrid | ComponentContentImageText | ComponentContentPagePreviewList | ComponentContentPricing | ComponentContentSectionHeadline | ComponentContentSocialProofBar | ComponentContentVideo | ComponentElementsButton | ComponentElementsHeadline | ComponentElementsPricingPlan | ComponentElementsQuestionAndAnswer | ComponentElementsResponsiveImage | ComponentElementsRichText | ComponentElementsSpacer | ComponentLayoutsSidebarLayout | ComponentNavigationDropdown | ComponentNavigationLink | ComponentNavigationLinkList | ComponentNavigationTableOfContents | Faq | Global | Hierarchy | I18NLocale | Menu | MenuItem | MsNoteTakingAppMsNoteAppNote | Page | SidebarLayout | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Global = {
   __typename?: 'Global';
@@ -911,6 +911,44 @@ export type MenuRelationResponseCollection = {
   data: Array<MenuEntity>;
 };
 
+export type MsNoteTakingAppMsNoteAppNote = {
+  __typename?: 'MsNoteTakingAppMsNoteAppNote';
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type MsNoteTakingAppMsNoteAppNoteEntity = {
+  __typename?: 'MsNoteTakingAppMsNoteAppNoteEntity';
+  attributes?: Maybe<MsNoteTakingAppMsNoteAppNote>;
+  id?: Maybe<Scalars['ID']['output']>;
+};
+
+export type MsNoteTakingAppMsNoteAppNoteEntityResponse = {
+  __typename?: 'MsNoteTakingAppMsNoteAppNoteEntityResponse';
+  data?: Maybe<MsNoteTakingAppMsNoteAppNoteEntity>;
+};
+
+export type MsNoteTakingAppMsNoteAppNoteEntityResponseCollection = {
+  __typename?: 'MsNoteTakingAppMsNoteAppNoteEntityResponseCollection';
+  data: Array<MsNoteTakingAppMsNoteAppNoteEntity>;
+  meta: ResponseCollectionMeta;
+};
+
+export type MsNoteTakingAppMsNoteAppNoteFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<MsNoteTakingAppMsNoteAppNoteFiltersInput>>>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  id?: InputMaybe<IdFilterInput>;
+  not?: InputMaybe<MsNoteTakingAppMsNoteAppNoteFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<MsNoteTakingAppMsNoteAppNoteFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+};
+
+export type MsNoteTakingAppMsNoteAppNoteInput = {
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   /** Change user password. Confirm with the current password. */
@@ -921,6 +959,7 @@ export type Mutation = {
   createMenuItem?: Maybe<MenuItemEntityResponse>;
   createMenuItemLocalization?: Maybe<MenuItemEntityResponse>;
   createMenuLocalization?: Maybe<MenuEntityResponse>;
+  createMsNoteTakingAppMsNoteAppNote?: Maybe<MsNoteTakingAppMsNoteAppNoteEntityResponse>;
   createPage?: Maybe<PageEntityResponse>;
   createPageLocalization?: Maybe<PageEntityResponse>;
   createSidebarLayout?: Maybe<SidebarLayoutEntityResponse>;
@@ -936,6 +975,7 @@ export type Mutation = {
   deleteHierarchy?: Maybe<HierarchyEntityResponse>;
   deleteMenu?: Maybe<MenuEntityResponse>;
   deleteMenuItem?: Maybe<MenuItemEntityResponse>;
+  deleteMsNoteTakingAppMsNoteAppNote?: Maybe<MsNoteTakingAppMsNoteAppNoteEntityResponse>;
   deletePage?: Maybe<PageEntityResponse>;
   deleteSidebarLayout?: Maybe<SidebarLayoutEntityResponse>;
   deleteUploadFile?: Maybe<UploadFileEntityResponse>;
@@ -962,6 +1002,7 @@ export type Mutation = {
   updateHierarchy?: Maybe<HierarchyEntityResponse>;
   updateMenu?: Maybe<MenuEntityResponse>;
   updateMenuItem?: Maybe<MenuItemEntityResponse>;
+  updateMsNoteTakingAppMsNoteAppNote?: Maybe<MsNoteTakingAppMsNoteAppNoteEntityResponse>;
   updatePage?: Maybe<PageEntityResponse>;
   updateSidebarLayout?: Maybe<SidebarLayoutEntityResponse>;
   updateUploadFile?: Maybe<UploadFileEntityResponse>;
@@ -1014,6 +1055,11 @@ export type MutationCreateMenuLocalizationArgs = {
   data?: InputMaybe<MenuInput>;
   id?: InputMaybe<Scalars['ID']['input']>;
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
+};
+
+
+export type MutationCreateMsNoteTakingAppMsNoteAppNoteArgs = {
+  data: MsNoteTakingAppMsNoteAppNoteInput;
 };
 
 
@@ -1082,6 +1128,11 @@ export type MutationDeleteMenuArgs = {
 export type MutationDeleteMenuItemArgs = {
   id: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
+};
+
+
+export type MutationDeleteMsNoteTakingAppMsNoteAppNoteArgs = {
+  id: Scalars['ID']['input'];
 };
 
 
@@ -1197,6 +1248,12 @@ export type MutationUpdateMenuItemArgs = {
   data: MenuItemInput;
   id: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
+};
+
+
+export type MutationUpdateMsNoteTakingAppMsNoteAppNoteArgs = {
+  data: MsNoteTakingAppMsNoteAppNoteInput;
+  id: Scalars['ID']['input'];
 };
 
 
@@ -1371,6 +1428,8 @@ export type Query = {
   menuItem?: Maybe<MenuItemEntityResponse>;
   menuItems?: Maybe<MenuItemEntityResponseCollection>;
   menus?: Maybe<MenuEntityResponseCollection>;
+  msNoteTakingAppMsNoteAppNote?: Maybe<MsNoteTakingAppMsNoteAppNoteEntityResponse>;
+  msNoteTakingAppMsNoteAppNotes?: Maybe<MsNoteTakingAppMsNoteAppNoteEntityResponseCollection>;
   page?: Maybe<PageEntityResponse>;
   pages?: Maybe<PageEntityResponseCollection>;
   sidebarLayout?: Maybe<SidebarLayoutEntityResponse>;
@@ -1446,6 +1505,18 @@ export type QueryMenuItemsArgs = {
 export type QueryMenusArgs = {
   filters?: InputMaybe<MenuFiltersInput>;
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type QueryMsNoteTakingAppMsNoteAppNoteArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+};
+
+
+export type QueryMsNoteTakingAppMsNoteAppNotesArgs = {
+  filters?: InputMaybe<MsNoteTakingAppMsNoteAppNoteFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
