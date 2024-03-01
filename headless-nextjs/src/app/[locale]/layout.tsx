@@ -10,16 +10,9 @@ import { ComponentRenderer } from "@/components/ComponentRenderer";
 import { componentMap } from "@/config/componentMap";
 import { draftMode } from "next/headers";
 import { getWebsiteData } from "@/lib/api/getWebsiteData";
+import { ILayoutProps } from "@/types";
 
-interface ILayout {
-  children: React.ReactNode;
-  params: {
-    slug: string[];
-    locale: string;
-  };
-}
-
-export default async function SlugLayout({ children, params }: ILayout) {
+export default async function SlugLayout({ children, params }: ILayoutProps) {
   const { locale } = params;
   const { isEnabled } = draftMode();
   const websiteData = await getWebsiteData(locale);
@@ -30,6 +23,11 @@ export default async function SlugLayout({ children, params }: ILayout) {
 
   return (
     <>
+      {isEnabled && (
+        <div className="absolute top-0 left-0 right-0 bg-red-500 text-white p-1 text-xs text-center">
+          Draft Mode
+        </div>
+      )}
       <GlobalContextProvider>
         <ConsentManager
           options={{
@@ -44,11 +42,6 @@ export default async function SlugLayout({ children, params }: ILayout) {
             ],
           }}
         ></ConsentManager>
-        {isEnabled && (
-          <div className="absolute top-0 left-0 right-0 bg-red-500 text-white p-1 text-xs text-center">
-            Draft Mode
-          </div>
-        )}
         <div className="flex flex-col pt-4 h-full">
           <Container className="flex items-center mb-4">
             <div className="flex gap-2 items-center md:mr-24">
