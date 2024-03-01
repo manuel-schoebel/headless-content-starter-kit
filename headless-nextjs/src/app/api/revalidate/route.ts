@@ -25,7 +25,10 @@ export async function POST(request: Request) {
 
   const revalidationPath = `/${locale}${path}`;
   try {
+    // one works when hosted on vercel
     revalidatePath(revalidationPath);
+    // this one works on a local build. So let's do both until it is fixed.
+    revalidatePath(path);
   } catch (e) {
     console.error("error revalidating", e);
     throw e;
